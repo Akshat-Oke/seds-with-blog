@@ -21,7 +21,28 @@ a {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    color: black;
+    background: white;
   }
+}
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 50%;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(168, 168, 168);
+  border-radius: 1vh;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(131, 131, 131);
 }

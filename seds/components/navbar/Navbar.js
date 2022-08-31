@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image';
-import logo from '../../public/seds_logo_w.png'
+import logo from '../../public/sedsblack.svg'
 import styles from '../../styles/navbar/navbar.module.css'
 
 function Navbar() {
@@ -15,7 +15,7 @@ function Navbar() {
           <Link href=""> CanSat</Link>
         </div>
         <div className={styles.buttons}>
-          <Image src={logo} width={120} height={50}></Image>
+          <Image src={logo} width={140} height={60}></Image>
         </div>
         <div className={styles.buttons}>
           <Link href=""> CubeSat</Link>
