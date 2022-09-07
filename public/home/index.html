@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SEDS - Home</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/android-icon-192x192.png"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+      }
+      html {
+        height: 100vh;
+      }
+      body {
+        height: 5100px;
+        background: #000;
+      }
+      canvas {
+        z-index: 1;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 100vw;
+        /* width: 800px; */
+        /* width: 100vw; */
+        max-height: none !important;
+        /* border: 2px solid red; */
+      }
+      main {
+        z-index: 200;
+        display: block;
+      }
+      .splide__slide img {
+        width: 100%;
+        height: auto;
+      }
+      section {
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        left: 0;
+        margin-top: 12.5vh;
+        height: 87.5vh;
+      }
+      section > div {
+        height: 100%;
+      }
+    </style>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/scroll.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/themes/splide-default.min.css"
+    />
+    <style>
+      svg {
+        filter: invert(99%) sepia(9%) saturate(655%) hue-rotate(8deg)
+          brightness(117%) contrast(100%);
+      }
+      .splide__arrow {
+        background: transparent;
+        height: 2.6em;
+        width: 2.6em;
+        border: 3px solid white;
+      }
+      .splide__pagination__page {
+        border-radius: 0;
+        width: 45px;
+        /* background: #fff; */
+        height: 4px;
+        margin-right: 11px;
+      }
+      .splide__pagination__page.is-active {
+        background: #fff;
+        transform: scale(1.1);
+      }
+      @media screen and (max-width: 720px) {
+        #image-slider {
+          height: 48vh;
+        }
+        nav {
+          filter: invert(0.9);
+        }
+        canvas {
+          max-width: none;
+          height: 80vh;
+        }
+        .visible {
+          visibility: visible;
+          position: relative;
+          background-color: #ddd;
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="intro-video"></canvas>
+    <div class="mouse-scroll">
+      <div class="mouse"></div>
+    </div>
+    <main>
+      <div class="menu" id="menu">
+        <div
+          class="close"
+          onclick="document.getElementById('menu').classList.remove('open')"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <h2>Projects</h2>
+        <div class="divider"></div>
+        <a class="nav-ele" href="../sacup/">Rocket</a>
+        <a class="nav-ele" href="../cansat/">CanSat</a>
+        <a class="nav-ele" href="../cubesat/">CubeSat</a>
+        <a class="nav-ele" href="../archangel/">R&D</a>
+      </div>
+      <nav class="navbar row">
+        <i
+          id="menu-open"
+          onclick="document.getElementById('menu').classList.add('open')"
+          class="nav-ele fa-solid fa-bars"
+        ></i>
+        <a class="nav-ele" href="../sacup/">Rocket</a>
+        <a class="nav-ele" href="../cansat/">CanSat</a>
+        <img src="../assets/images/seds_logo_w.png" alt="SEDS Logo" />
+        <a class="nav-ele" href="../cubesat/">CubeSat</a>
+        <a class="nav-ele" href="../archangel/">R&D</a>
+        <i class="nav-ele fa fa-search" aria-hidden="true"></i>
+      </nav>
+      <section id="carousel-section">
+        <div style="height: 40vh" class="menu visible">
+          <h2>Projects</h2>
+          <div class="divider"></div>
+          <a class="nav-ele" href="../sacup/">Rocket</a>
+          <a class="nav-ele" href="../cansat/">CanSat</a>
+          <a class="nav-ele" href="../cubesat/">CubeSat</a>
+          <a class="nav-ele" href="../archangel/">R&D</a>
+        </div>
+        <!-- Carousel -->
+        <div class="splide" id="image-slider">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <img src="assets/home-1.png" alt="" />
+              </li>
+              <li class="splide__slide">
+                <img src="assets/home-2.png" alt="" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
+
+    <script src="index.js"></script>
+    <script>
+      new Splide("#image-slider", {
+        // cover: true,
+        // heightRatio: 0.5,
+        width: "100vw",
+        height: "100vh",
+      }).mount();
+    </script>
+  </body>
+</html>

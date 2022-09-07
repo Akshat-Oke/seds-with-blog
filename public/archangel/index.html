@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Archangel</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/scroll.css" />
+    <style>
+      /* main {
+        /* margin-top: 12.4vh; 
+      } */
+      * {
+        font-family: "Kanit", sans-serif;
+        font-weight: 400;
+      }
+      section#heading {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+        align-items: center;
+        /* height: 2000px; */
+      }
+      #archangel h1 {
+        transform: translateY(-50%);
+      }
+      #intro-text p {
+        font-size: 2.1rem;
+        font-weight: 300;
+      }
+      /* section:not(:first-child) {
+        opacity: 0;
+        visibility: hidden;
+      } */
+      .container-hero {
+        /* height: calc(3770px - 100vh); */
+        height: calc(800px + 180vh);
+        padding-top: 50vh;
+        /* top: 40%; */
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+        position: relative;
+      }
+      @media screen and (max-width: 730px) {
+        .container-hero {
+          height: calc(200vh + 800px);
+        }
+      }
+      /* .container-hero div {
+        border: 2px solid red;
+      } */
+      .container-hero #intro-text {
+        width: 80%;
+        font-size: 2.3rem;
+        font-weight: 400;
+        text-align: center;
+        color: white;
+      }
+      @media screen and (max-width: 600px) {
+        #intro-text {
+          font-size: 2rem;
+        }
+      }
+      #intro-text {
+        /* position: absolute;
+        top: 50vh;
+        left: 50%;
+        transform: translate(-50%, -50%); */
+        /* margin-top: -60%; */
+        margin-bottom: 100vh;
+        margin-top: 600px;
+      }
+      #archangel {
+        margin-top: 0;
+      }
+      .filler {
+        height: 1800px;
+      }
+      canvas {
+        z-index: 1;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(calc(-50% + 6vh));
+        max-width: 100vw;
+        /* width: 800px; */
+        /* width: 100vw; */
+        max-height: 87.5vh;
+      }
+      canvas {
+        z-index: 0;
+      }
+      #s2 {
+        height: 3000px;
+      }
+      @media screen and (max-width: 500px) {
+        canvas {
+          max-width: none;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="labels.css" />
+  </head>
+  <body>
+    <div class="menu" id="menu">
+      <div
+        class="close"
+        onclick="document.getElementById('menu').classList.remove('open')"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <h2>Projects</h2>
+      <div class="divider"></div>
+      <a class="nav-ele" href="../sacup/">Rocket</a>
+      <a class="nav-ele" href="../cansat/">CanSat</a>
+      <a class="nav-ele" href="../cubesat/">CubeSat</a>
+      <a class="nav-ele" href="../archangel/">R&D</a>
+    </div>
+    <nav class="navbar row">
+      <i
+        id="menu-open"
+        onclick="document.getElementById('menu').classList.add('open')"
+        class="nav-ele fa-solid fa-bars"
+      ></i>
+      <a class="nav-ele" href="../sacup/">Rocket</a>
+      <a class="nav-ele" href="../cansat/">CanSat</a>
+      <img src="../assets/images/seds_logo_w.png" alt="SEDS Logo" />
+      <a class="nav-ele" href="../cubesat/">CubeSat</a>
+      <a class="nav-ele" href="../archangel/">R&D</a>
+      <i class="nav-ele fa fa-search" aria-hidden="true"></i>
+    </nav>
+    <canvas id="video"></canvas>
+    <main>
+      <div class="container-hero" id="hero">
+        <div class="h1" id="archangel">
+          <h1 class="blue-link row">
+            <a href="https://www.google.com/">ARCHANGEL</a>
+          </h1>
+        </div>
+        <div id="intro-text">
+          Team Archangel is the Research and Development division of SEDS BPHC
+          <p>
+            It is currently developing solid rocket motors and will soon work on
+            thrust vector control and hybrid rocket motors.
+          </p>
+        </div>
+      </div>
+    </main>
+    <section class="filler" id="s"></section>
+    <section class="filler" id="label1">
+      <div class="label" id="bulkhead">
+        <p>Bulkhead</p>
+        <svg height="30" width="100">
+          <polyline
+            points="0,15 80,15 100,30"
+            style="fill: none; stroke: black; stroke-width: 1"
+          />
+          Sorry, your browser does not support inline SVG.
+        </svg>
+      </div>
+      <div class="label" id="casing">
+        <svg height="30" width="80">
+          <polyline
+            points="0,30 20,15 100, 15"
+            style="fill: none; stroke: black; stroke-width: 1"
+          />
+          Sorry, your browser does not support inline SVG.
+        </svg>
+        <p>Casing</p>
+      </div>
+      <div class="label" id="grains">
+        <p>Grains</p>
+        <svg height="34" width="100">
+          <polyline
+            points="0,17 75,17 100,0"
+            style="fill: none; stroke: black; stroke-width: 1"
+          />
+          Sorry, your browser does not support inline SVG.
+        </svg>
+      </div>
+      <div class="label" id="nozzle">
+        <svg height="24" width="80">
+          <polyline
+            points="0,24 20,12 80, 12"
+            style="fill: none; stroke: black; stroke-width: 1"
+          />
+          Sorry, your browser does not support inline SVG.
+        </svg>
+        <p>Nozzle</p>
+      </div>
+    </section>
+    <section class="filler" id="s2">
+      <div class="label2" id="motor">
+        <svg height="50" width="140">
+          <polyline
+            points="0,50 33,25 140, 25"
+            style="fill: none; stroke: white; stroke-width: 1"
+          />
+          Sorry, your browser does not support inline SVG.
+        </svg>
+        <p>Solid Rocket Motor</p>
+      </div>
+    </section>
+    <section>
+      <div class="mobile-label" id="a">Bulkhead</div>
+      <div class="mobile-label" id="b">Casing</div>
+      <div class="mobile-label" id="c">Grains</div>
+      <div class="mobile-label" id="d">Nozzle</div>
+    </section>
+    <div class="mouse-scroll">
+      <div class="mouse"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/ScrollTrigger.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

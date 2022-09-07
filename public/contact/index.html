@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- <link rel="stylesheet" href="../css/style.css" /> -->
+    <link rel="stylesheet" href="./contact.css" />
+    <title>Contact Us</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/android-icon-192x192.png"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <style>
+      @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
+
+      /* Menu mobile */
+      .menu {
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        /* transform: translateX(-100%); */
+        visibility: hidden;
+        width: 100%;
+        /* height: 100%; */
+        height: 0;
+        /* background: #24222a; */
+        background-color: rgba(255, 255, 255, 0.94);
+        color: #111;
+        transition: 0.45s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+      }
+      .menu.open {
+        /* transform: translateX(0); */
+        height: 80vh;
+        visibility: visible;
+        opacity: 1;
+      }
+      .menu a {
+        color: #121;
+        font-size: 23px;
+        margin-bottom: 8px;
+        font-weight: 400;
+      }
+      .menu h2 {
+        text-transform: uppercase;
+        font-size: 30px;
+      }
+      .menu .divider {
+        width: 85%;
+        height: 2px;
+        background-color: black;
+        margin: 10px;
+        margin-bottom: 20px;
+      }
+      .menu .close {
+        transition: 1s;
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        font-size: 30px;
+      }
+      .menu .close:hover {
+        cursor: pointer;
+      }
+      /* ===== Scrollbar CSS ===== */
+      /* Firefox */
+      /* * {
+  scrollbar-width: thin;
+  scrollbar-color: #ffffff #121212;
+}
+
+/* Chrome, Edge, and Safari */
+      *::-webkit-scrollbar {
+        width: 10px;
+      }
+      /*
+*::-webkit-scrollbar-track {
+  background:  #121212;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
+} */
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #ddd;
+        border-radius: 10px;
+        /* border: 3px solid #ddd; */
+      }
+
+      ::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      nav {
+        z-index: 998;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 12.5vh;
+        width: 100%;
+        margin: 0;
+        font-family: "Kanit", sans-serif;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        user-select: none;
+      }
+      nav a {
+        font-size: 18px;
+      }
+      nav img {
+        height: 78%;
+      }
+      nav i {
+        font-size: 23px;
+      }
+      nav i:first-child {
+        margin-right: auto;
+        margin-left: 5vw;
+      }
+      nav i:last-child {
+        margin-left: auto;
+        margin-right: 5vw;
+      }
+      nav > * {
+        margin: 0 18px;
+      }
+      nav i.nav-ele {
+        display: none;
+      }
+      @media screen and (max-width: 720px) {
+        nav img {
+          height: 70%;
+        }
+        nav a {
+          display: none;
+        }
+        nav i.nav-ele {
+          display: block;
+        }
+      }
+      nav a {
+        text-decoration: none;
+        color: white !important;
+      }
+      a {
+        text-decoration: none;
+      }
+      body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+
+      main {
+        flex: 1 0 auto;
+      }
+      .user__form {
+        height: 500px;
+        max-height: 87.6vh;
+      }
+      footer {
+        text-align: center;
+      }
+      footer {
+        padding-bottom: 10px;
+      }
+      footer span {
+        margin-right: 5px;
+      }
+      footer a {
+        color: white;
+        font-weight: 300;
+        border-right: 1px solid white;
+        margin-right: 4px;
+        padding-right: 4px;
+        transition: 0.4s;
+      }
+      footer a:last-child {
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <div class="menu" id="menu">
+      <div
+        class="close"
+        onclick="document.getElementById('menu').classList.remove('open')"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <h2>Projects</h2>
+      <div class="divider"></div>
+      <a class="nav-ele" href="../sacup/">Rocket</a>
+      <a class="nav-ele" href="../cansat/">CanSat</a>
+      <a class="nav-ele" href="../cubesat/">CubeSat</a>
+      <a class="nav-ele" href="../archangel/">R&D</a>
+    </div>
+    <nav class="navbar1">
+      <i
+        id="menu-open"
+        onclick="document.getElementById('menu').classList.add('open')"
+        class="nav-ele fa-solid fa-bars"
+        style="font-size: 22px"
+      ></i>
+      <a class="nav-ele" href="../sacup/">Rocket</a>
+      <a class="nav-ele" href="../cansat/">CanSat</a>
+      <img src="../assets/images/seds_logo_w.png" alt="SEDS Logo" />
+      <a class="nav-ele" href="../cubesat/">CubeSat</a>
+      <a class="nav-ele" href="../archangel/">R&D</a>
+      <i
+        class="nav-ele fa fa-search"
+        style="font-size: 20px"
+        aria-hidden="true"
+      ></i>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main>
+      <!-- MAIN HEADER -->
+      <h1 class="contact__main-header">Contact Us</h1>
+      <hr />
+      <div class="user__form" style="background-image: url('worldmap.jpg')">
+        <form action="">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="user__info">
+                  <input
+                    class="input__area"
+                    type="text"
+                    placeholder="Name"
+                    required
+                  />
+                  <input
+                    class="input__area"
+                    type="email"
+                    placeholder="Email"
+                    required
+                  />
+                  <input
+                    class="input__area"
+                    type="tel"
+                    placeholder="Phone Number"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <textarea
+                  class="input__area__text"
+                  type="text"
+                  placeholder="Your message to us"
+                  required
+                ></textarea>
+              </div>
+            </div>
+            <div class="button__row">
+              <button class="submit__button" type="submit">Send Message</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <span>Credits:</span>
+      <a href="#!">Design Concepts</a>
+      <a href="#!">Wireframe</a>
+      <a href="credits.html">Renders</a>
+      <a href="credits.html">Design</a>
+      <a href="credits.html">Devs</a>
+    </footer>
+  </body>
+</html>

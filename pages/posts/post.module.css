@@ -1,0 +1,39 @@
+.blog {
+  max-width: 940px;
+  width: 90vw;
+  margin: auto;
+}
+.blog h1 {
+  font-weight: bold;
+}
+.date {
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+.author {
+  margin: 5px 0;
+  opacity: 0.86;
+  font-size: 1.6rem;
+}
+.divider {
+  height: 2px;
+  background: #666;
+  width: 100%;
+}
+.header {
+  height: 300px;
+  width: 100vw;
+  position: relative;
+  /* background: aquamarine; */
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.back_button {
+  position: absolute;
+  left: 30px;
+  top: 40px;
+  color: white;
+  text-shadow: 1px 1px 5px black;
+}

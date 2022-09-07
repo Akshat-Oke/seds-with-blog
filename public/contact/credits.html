@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SEDS - Credits</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Source+Sans+Pro:wght@300;400&display=swap");
+      body {
+        text-align: center;
+        padding-top: 12.6vh;
+      }
+      h2,
+      h1 {
+        font-size: 3rem !important;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 300;
+      }
+      h1 {
+        font-weight: 500;
+        font-size: 4rem !important;
+      }
+      div a {
+        font-family: "Source Sans Pro", sans-serif !important;
+        font-size: 2.3rem !important;
+
+        color: white !important;
+        margin-right: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Credits</h1>
+    <h2>Renders</h2>
+    <div>
+      <a href="#!">Siddhant</a>
+      <a href="#!">Kushal</a>
+    </div>
+    <h2>Devs</h2>
+    <div>
+      <a href="#!">Akshat</a>
+      <a href="#!">Kushal</a>
+      <a href="#!">Anant</a>
+    </div>
+    <!-- NAVBAR -->
+    <div class="menu" id="menu">
+      <div
+        class="close"
+        onclick="document.getElementById('menu').classList.remove('open')"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <h2>Projects</h2>
+      <div class="divider"></div>
+      <a class="nav-ele" href="../sacup/">Rocket</a>
+      <a class="nav-ele" href="../cansat/">CanSat</a>
+      <a class="nav-ele" href="../cubesat/">CubeSat</a>
+      <a class="nav-ele" href="../archangel/">R&D</a>
+    </div>
+    <nav class="navbar1">
+      <i
+        id="menu-open"
+        onclick="document.getElementById('menu').classList.add('open')"
+        class="nav-ele fa-solid fa-bars"
+        style="font-size: 22px"
+      ></i>
+      <a class="nav-ele" href="../sacup/">Rocket</a>
+      <a class="nav-ele" href="../cansat/">CanSat</a>
+      <img src="../assets/images/seds_logo_w.png" alt="SEDS Logo" />
+      <a class="nav-ele" href="../cubesat/">CubeSat</a>
+      <a class="nav-ele" href="../archangel/">R&D</a>
+      <i
+        class="nav-ele fa fa-search"
+        style="font-size: 20px"
+        aria-hidden="true"
+      ></i>
+    </nav>
+  </body>
+</html>

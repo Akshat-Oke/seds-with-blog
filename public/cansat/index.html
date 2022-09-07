@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cansat</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/scroll.css" />
+    <style>
+      * {
+        font-family: "Kanit", sans-serif;
+        font-weight: 400;
+      }
+      section#heading {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+        align-items: center;
+        /* height: 2000px; */
+      }
+      #cansat h1 {
+        transform: translateY(-50%);
+        text-transform: uppercase;
+      }
+      #intro p {
+        font-size: 2.3rem;
+      }
+      .container-hero {
+        /* height: calc(3770px - 100vh); */
+        height: calc(1200px + 180vh);
+        padding-top: 50vh;
+        /* top: 40%; */
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+        position: relative;
+      }
+      @media screen and (max-width: 730px) {
+        .container-hero {
+          height: calc(200vh + 1200px);
+        }
+      }
+      /* .container-hero div {
+        border: 2px solid red;
+      } */
+      .container-hero #intro-text {
+        width: 80%;
+        font-size: 2.1rem;
+        font-weight: 300;
+        text-align: center;
+        color: white;
+        margin-bottom: 100vh;
+        margin-top: 600px;
+      }
+      @media screen and (max-width: 600px) {
+        #intro-text {
+          font-size: 2rem;
+        }
+      }
+      #intro-text p:last-child {
+        font-weight: 300;
+      }
+      p.big {
+        font-size: 2.2rem;
+        font-weight: 400;
+      }
+      .filler,
+      .filler-label {
+        height: 1800px;
+        /* border-top: 2px solid red; */
+      }
+      #s2,
+      #label3 {
+        height: 1200px;
+      }
+      canvas {
+        max-height: 87.6vh;
+        max-width: none;
+        /* border: 2px solid orangered; */
+        top: 12.4vh;
+        transform: translateX(-50%);
+      }
+    </style>
+    <link rel="stylesheet" href="labels.css" />
+  </head>
+  <body>
+    <div class="menu" id="menu">
+      <div
+        class="close"
+        onclick="document.getElementById('menu').classList.remove('open')"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <h2>Projects</h2>
+      <div class="divider"></div>
+      <a class="nav-ele" href="../sacup/">Rocket</a>
+      <a class="nav-ele" href="../cansat/">CanSat</a>
+      <a class="nav-ele" href="../cubesat/">CubeSat</a>
+      <a class="nav-ele" href="../archangel/">R&D</a>
+    </div>
+    <nav class="navbar row">
+      <i
+        id="menu-open"
+        onclick="document.getElementById('menu').classList.add('open')"
+        class="nav-ele fa-solid fa-bars"
+      ></i>
+      <a class="nav-ele" href="../sacup/">Rocket</a>
+      <a class="nav-ele" href="../cansat/">CanSat</a>
+      <img src="../assets/images/seds_logo_w.png" alt="SEDS Logo" />
+      <a class="nav-ele" href="../cubesat/">CubeSat</a>
+      <a class="nav-ele" href="../archangel/">R&D</a>
+      <i class="nav-ele fa fa-search" aria-hidden="true"></i>
+    </nav>
+    <div class="mouse-scroll">
+      <div class="mouse"></div>
+    </div>
+    <canvas id="video"></canvas>
+    <main>
+      <div class="container-hero" id="hero">
+        <div class="h1" id="cansat">
+          <h1>
+            Team <a class="blue-link" href="https://www.google.com/">JANUS</a>
+          </h1>
+        </div>
+        <div id="intro-text">
+          <p class="big">A CanSat is a miniature satellite payload.</p>
+          <p>
+            The CanSat container will have a compact Avionics Bay consisting of
+            Pressure, Rotation & GPS sensors to collect accurate data. Apart
+            from the modeling, designing, software development, sensor
+            integration, and manufacturing, the CanSat will be tested on several
+            bases, including recovery, release mechanism, construction quality,
+            and material performance. The tests are Drop, Thermal, Vibration,
+            and Vacuum.
+          </p>
+        </div>
+      </div>
+    </main>
+    <section class="filler" id="s1"></section>
+    <section class="filler-label" id="label1">
+      <div class="label left" id="force">
+        <h3>
+          Force Analysis
+
+          <svg height="30" width="180">
+            <polyline
+              points="0,15 160,15 180,30"
+              style="fill: none; stroke: black; stroke-width: 1"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          <svg class="mobile" height="2" width="32">
+            <line
+              x1="0"
+              y1="0"
+              x2="32"
+              y2="0"
+              style="stroke: black; stroke-width: 2"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+        </h3>
+        <p>
+          Considering parameters like drag force, decent velocity, the density
+          of air, etc., the areas of the two parachutes are calculated. These
+          factors are also used to determine the appropriate material for
+          fabricating the container body.
+        </p>
+      </div>
+      <div class="label right" id="container">
+        <h3>
+          <svg height="30" width="120" data-left-offset="-120px">
+            <polyline
+              points="0,30 20,15 120,15"
+              style="fill: none; stroke: black; stroke-width: 1"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          <svg class="mobile" height="2" width="32">
+            <line
+              x1="0"
+              y1="0"
+              x2="32"
+              y2="0"
+              style="stroke: black; stroke-width: 2"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          Container
+        </h3>
+        <p>
+          The design of the container depends on multiple factors. The type of
+          payload to be designed is the primary determining factor of container
+          design. It is modeled to meet the requirements of the mission.
+        </p>
+      </div>
+    </section>
+    <section class="filler" id="s2"></section>
+    <section class="filler-label" id="label2">
+      <div class="label left" id="parachute">
+        <h3>
+          Parachute Bay
+          <svg height="30" width="180">
+            <polyline
+              points="0,15 160,15 180,30"
+              style="fill: none; stroke: black; stroke-width: 1"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          <svg class="mobile" height="2" width="32">
+            <line
+              x1="0"
+              y1="0"
+              x2="32"
+              y2="0"
+              style="stroke: black; stroke-width: 2"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+        </h3>
+        <p>
+          Activated audio beacon and the latest obtained GPS data will be used
+          to locate the container and payload. The parachute's fluorescent
+          orange & pink color will make it easily detectable.
+        </p>
+      </div>
+      <div class="label left" id="battery">
+        <h3>
+          Battery
+          <svg height="30" width="180">
+            <polyline
+              points="0,15 160,15 180,30"
+              style="fill: none; stroke: black; stroke-width: 1"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          <svg class="mobile" height="2" width="32">
+            <line
+              x1="0"
+              y1="0"
+              x2="32"
+              y2="0"
+              style="stroke: black; stroke-width: 2"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+        </h3>
+        <p>
+          The Electrical Power subsystem ensures that the power sources are
+          sufficient to power the container and payload for 2 hours.
+        </p>
+      </div>
+      <div class="label right" id="avionics">
+        <h3>
+          <svg height="30" width="120" data-left-offset="-120px">
+            <polyline
+              points="0,30 20,15 120,15"
+              style="fill: none; stroke: black; stroke-width: 1"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          <svg class="mobile" height="2" width="52">
+            <line
+              x1="0"
+              y1="0"
+              x2="52"
+              y2="0"
+              style="stroke: black; stroke-width: 2"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          Avionics Bay
+        </h3>
+        <p></p>
+      </div>
+      <div class="label right" id="gcs">
+        <h3>
+          <svg height="30" width="120" data-left-offset="-120px">
+            <polyline
+              points="0,30 20,15 120,15"
+              style="fill: none; stroke: black; stroke-width: 1"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          <svg class="mobile" height="2" width="32">
+            <line
+              x1="0"
+              y1="0"
+              x2="32"
+              y2="0"
+              style="stroke: black; stroke-width: 2"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          GCS
+        </h3>
+        <!-- <p> -->
+        <ul class="hide-early">
+          <li>
+            The Ground Control Station consists of a laptop, Xbee radios, and a
+            hand-held antenna. It is used to receive and transmit data to the
+            CanSat.
+          </li>
+          <li>
+            The interface is designed with Python 3.9. The ground station will
+            command the CanSat to start transmitting telemetry data before the
+            launch.
+          </li>
+          <li>
+            The Xbee will receive data from the container, and GCS software will
+            read and store the data and perform real-time plotting.
+          </li>
+        </ul>
+        <!-- </p> -->
+      </div>
+      <div class="label right" id="payload">
+        <h3>
+          <svg height="30" width="120" data-left-offset="-120px">
+            <polyline
+              points="0,0 20,15 120,15"
+              style="fill: none; stroke: black; stroke-width: 1"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          <svg class="mobile" height="2" width="32">
+            <line
+              x1="0"
+              y1="0"
+              x2="32"
+              y2="0"
+              style="stroke: black; stroke-width: 2"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          Payload
+        </h3>
+        <p></p>
+      </div>
+    </section>
+    <section class="filler" id="s3"></section>
+    <section class="filler-label" id="label3">
+      <div class="label left" id="cdhs">
+        <h3>CDHS</h3>
+        <ul>
+          <li>
+            The command and data handling subsystem processes and handles the
+            data.
+          </li>
+          <li>
+            The Teensy microcontroller processes and samples data from the
+            sensors.
+          </li>
+          <li>This data is primarily stored in the SD card.</li>
+          <li>
+            It is also sent to the secondary storage device, the EEPROM, in case
+            of processor data reset.
+          </li>
+          <li>
+            The Xbee module facilitates data intercommunication between the
+            container, payload and GCS.
+          </li>
+        </ul>
+      </div>
+      <div class="label left" id="fsw">
+        <h3>FSW</h3>
+        <p>
+          The Flight Software reads data from the sensors, the ground station,
+          and stores, analyzes and processes the data for flight control and on
+          board deployments. The onboard deployments include:
+        </p>
+        <ul>
+          <li>
+            Controlling the release of the parachutes and payload at appropriate
+            heights.
+          </li>
+          <li>Maintaining the orientation of the payload camera.</li>
+          <li>
+            Managing GPS and Audio Beacon function for the successful location
+            after landing.
+          </li>
+        </ul>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/ScrollTrigger.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

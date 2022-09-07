@@ -1,0 +1,70 @@
+main.main {
+  background: #eee;
+  min-height: 100vh;
+}
+.container {
+  display: flex;
+  width: 100%;
+}
+.container section {
+  flex: 4;
+  margin: 0 30px;
+}
+.container aside {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-right: 20px;
+}
+form.post_form textarea {
+  width: 90%;
+  height: 65vh;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1.8rem;
+}
+form.post_form fieldset label {
+  margin-left: 6px;
+}
+form.post_form fieldset {
+  outline: none;
+  border: none;
+  font-size: 20px;
+}
+
+button.previewButton {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+button.btn_blue,
+.submit {
+  background-color: #4a93e0;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.submit {
+  margin-bottom: 30px;
+}
+.coverImage {
+  width: 90%;
+  padding: 5px 10px;
+  margin-bottom: 17px;
+  font-size: 1.6rem;
+}

@@ -1,0 +1,60 @@
+div.label,
+div.label2 {
+  z-index: 100;
+  position: fixed;
+  top: 50%;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  color: black !important;
+  opacity: 0;
+}
+div.mobile-label {
+  position: fixed;
+  left: 0;
+  bottom: 40px;
+  color: black;
+  z-index: 100;
+  font-size: 3.7rem;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+@media screen and (max-width: 500px) {
+  div#motor {
+    font-size: 3rem;
+    top: 25vh;
+    left: 25%;
+  }
+  #motor svg {
+    display: none;
+  }
+  div.mobile-label {
+    display: block;
+  }
+  div.label p,
+  div.label2 p {
+    font-size: 2.3rem;
+  }
+}
+#bulkhead {
+  left: 0;
+}
+#casing {
+  left: 50px;
+}
+#casing p {
+  text-shadow: 0 0 9px white;
+}
+#grains {
+  left: 100px;
+}
+#nozzle {
+  left: 200px;
+}
+#motor p {
+  color: white;
+}
+/* div.label:nth-child(even) {
+  color: red;
+} */

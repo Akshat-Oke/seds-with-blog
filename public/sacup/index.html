@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SA Cup</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/scroll.css" />
+    <link rel="stylesheet" href="labels.css" />
+
+    <style>
+      body {
+        background: linear-gradient(
+          90deg,
+          rgb(17 17 17) 0%,
+          #171717 50%,
+          #222222 51%
+        );
+      }
+      #intro p {
+        font-size: 2.3rem;
+      }
+      .container-hero {
+        /* height: calc(3770px - 100vh); */
+        height: calc(500px + 120vh);
+        padding-top: 50vh;
+        /* top: 40%; */
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+        position: relative;
+      }
+      @media screen and (max-width: 730px) {
+        .container-hero {
+          height: calc(150vh + 400px);
+        }
+      }
+      .container-hero #intro-text {
+        width: 80%;
+        font-size: 2.1rem;
+        font-weight: 300;
+        text-align: center;
+        color: white;
+        margin-bottom: 100vh;
+        margin-top: 600px;
+      }
+      @media screen and (max-width: 600px) {
+        #intro-text {
+          font-size: 2rem;
+        }
+      }
+      #intro-text p:last-child {
+        font-weight: 300;
+      }
+      #sacup {
+        transform: translateY(-100px);
+      }
+      p.big {
+        font-size: 2.2rem;
+        font-weight: 400;
+      }
+      .filler,
+      .filler-label {
+        height: 1800px;
+        /* border-top: 2px solid red; */
+      }
+      .filler-video {
+        height: 1000px;
+      }
+      #s2,
+      #label3 {
+        height: 1200px;
+      }
+      canvas {
+        max-height: 87.6vh;
+        max-width: none;
+        top: 12.4vh;
+        transform: translateX(-50%);
+      }
+      @media screen and (max-width: 650px) {
+        canvas {
+          transform: translateX(-35%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loading-main">
+      <div class="box">
+        <div class="container">
+          <span class="circle"></span>
+          <span class="circle"></span>
+          <span class="circle"></span>
+          <span class="circle"></span>
+        </div>
+        Loading
+      </div>
+    </div>
+    <div class="menu" id="menu">
+      <div
+        class="close"
+        onclick="document.getElementById('menu').classList.remove('open')"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <h2>Projects</h2>
+      <div class="divider"></div>
+      <a class="nav-ele" href="../sacup/">Rocket</a>
+      <a class="nav-ele" href="../cansat/">CanSat</a>
+      <a class="nav-ele" href="../cubesat/">CubeSat</a>
+      <a class="nav-ele" href="../archangel/">R&D</a>
+    </div>
+    <nav class="navbar row">
+      <i
+        id="menu-open"
+        onclick="document.getElementById('menu').classList.add('open')"
+        class="nav-ele fa-solid fa-bars"
+      ></i>
+      <a class="nav-ele" href="../sacup/">Rocket</a>
+      <a class="nav-ele" href="../cansat/">CanSat</a>
+      <img src="../assets/images/seds_logo_w.png" alt="SEDS Logo" />
+      <a class="nav-ele" href="../cubesat/">CubeSat</a>
+      <a class="nav-ele" href="../archangel/">R&D</a>
+      <i class="nav-ele fa fa-search" aria-hidden="true"></i>
+    </nav>
+    <div class="mouse-scroll up">
+      <div class="mouse"></div>
+    </div>
+    <canvas id="video"></canvas>
+    <main>
+      <div class="container-hero" id="hero">
+        <div class="h1" id="sacup">
+          <h1>
+            <a class="blue-link" href="https://www.google.com/">Apeiron III</a>
+          </h1>
+        </div>
+      </div>
+    </main>
+    <section class="filler" id="label1">
+      <div class="label right" id="nose">
+        <h3>
+          <svg height="30" width="120" data-left-offset="-120px">
+            <polyline
+              points="0,30 20,15 120,15"
+              style="fill: none; stroke: white; stroke-width: 1"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          <svg class="mobile" height="2" width="32">
+            <line
+              x1="0"
+              y1="0"
+              x2="32"
+              y2="0"
+              style="stroke: white; stroke-width: 2"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          Nose Cone
+        </h3>
+        <p>The forward most component used to reduce drag</p>
+      </div>
+      <div class="label right" id="structures">
+        <h3>
+          <svg height="30" width="120" data-left-offset="-120px">
+            <polyline
+              points="0,30 20,15 120,15"
+              style="fill: none; stroke: white; stroke-width: 1"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          <svg class="mobile" height="2" width="32">
+            <line
+              x1="0"
+              y1="0"
+              x2="32"
+              y2="0"
+              style="stroke: white; stroke-width: 2"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          Structures
+        </h3>
+        <ul>
+          <li>
+            The Aero-structures team designs the structural and aerodynamic
+            components of the rocket.
+          </li>
+          <li>The airframe primarily consists of the</li>
+          <ul>
+            <li>
+              <b>Body tubes</b> is made using fiberglass. It contains components
+              like recovery bay, avionics bay and payload bay - which are
+              connected by couplers
+            </li>
+            <li>
+              <b>Bulkheads</b> separate and insulate diff components inside
+              rocket
+            </li>
+            <li>
+              <b>Centering rings and motor bay</b> hold the motor in place
+            </li>
+            <li>
+              <b>Fins</b> provide lift forces to maintain stability of the
+              rocket
+            </li>
+          </ul>
+        </ul>
+      </div>
+    </section>
+    <section class="filler-video" id="s2"></section>
+    <section class="filler" id="label2">
+      <div class="label right tall-svg" id="payload">
+        <h3>
+          <svg height="260" width="150" data-left-offset="-120px">
+            <polyline
+              points="0,260 120,130 150,130"
+              style="fill: none; stroke: white; stroke-width: 1"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          <svg class="mobile" height="2" width="32">
+            <line
+              x1="0"
+              y1="0"
+              x2="32"
+              y2="0"
+              style="stroke: white; stroke-width: 2"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          Payload
+        </h3>
+        <ul>
+          <li>
+            Payload is the experiment being carried onboard by the rocket during
+            it's high-velocity travel through the atmosphere.
+          </li>
+          <li>
+            The technical objective of the payload we used in 2021, P.A.R.I
+            (Payload for Antibiotic Resistance Investigation), is to test
+            antibiotic resistance expression and the influence of aluminum
+            contamination in spaceflight conditions in Methylorubrum
+            rhodesianum, a Gram-negative E. coli.
+          </li>
+          <li>
+            The interactions of metals and metal resistance genes with
+            antibiotic resistance is a developing area of research. It is
+            important moving forward to understand how metals influence
+            antibiotic resistance expression.
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="filler-video" id="s3"></section>
+    <section class="filler" id="label3">
+      <div class="label right tall-svg" id="recovery" style="opacity: 1">
+        <h3>
+          <svg height="260" width="150" data-left-offset="-120px">
+            <polyline
+              points="0,260 120,130 150,130"
+              style="fill: none; stroke: white; stroke-width: 1"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          <svg class="mobile" height="2" width="32">
+            <line
+              x1="0"
+              y1="0"
+              x2="32"
+              y2="0"
+              style="stroke: white; stroke-width: 2"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          Recovery
+        </h3>
+        <ul>
+          <li>
+            The recovery subsystem provides a safe return for the rocket and the
+            payload after reaching the apogee.
+          </li>
+          <li>
+            In the 2021 SA Cup, we used two parachutes - a drogue parachute
+            which was deployed at apogee, and a main parachute which was
+            deployed at a lower altitude.
+          </li>
+          <li>
+            In the 2022 SA Cup, we are using a reefing parachute, which is a
+            single parachute acting as the drogue & main chutes. The drogue is
+            deployed at 10,000ft and the reefing mechanism opens up the
+            parachute at 1500 ft, and it then behaves as a main parachute.
+          </li>
+        </ul>
+      </div>
+      <div class="label right" id="avionics" style="opacity: 1">
+        <h3>
+          <svg height="30" width="120" data-left-offset="-120px">
+            <polyline
+              points="0,30 20,15 120,15"
+              style="fill: none; stroke: white; stroke-width: 1"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          <svg class="mobile" height="2" width="32">
+            <line
+              x1="0"
+              y1="0"
+              x2="32"
+              y2="0"
+              style="stroke: white; stroke-width: 2"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          Avionics
+        </h3>
+        <ul>
+          <li>
+            Avionics is the brain of our system. The avionics senses data,
+            crunches the numbers and gives an output out of actuators which
+            control physical parameters of the rocket like applying air brakes
+            or ejecting the parachute.
+          </li>
+          <li>
+            The rocket’s avionics consist of an SRAD (Student Researched And
+            Developed)flight computer, a COTS (Commercially Off The Shelf)
+            altimeter, and a COTS GPS. All three modules function independently
+            of each other.
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="filler-video" id="s4"></section>
+    <section class="filler" id="label4">
+      <div class="label right" id="airbrakes">
+        <h3>
+          <svg height="30" width="120" data-left-offset="-120px">
+            <polyline
+              points="0,30 20,15 120,15"
+              style="fill: none; stroke: white; stroke-width: 1"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          <svg class="mobile" height="2" width="32">
+            <line
+              x1="0"
+              y1="0"
+              x2="32"
+              y2="0"
+              style="stroke: white; stroke-width: 2"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          Airbrakes
+        </h3>
+        <p>
+          An airbrake is a mechanism that helps in slowing down the ascent of
+          the rocket in order to reach the target apogee. The time and level of
+          deployment of the airbrake fins is governed by Monte Carlo
+          Simulations.
+        </p>
+      </div>
+    </section>
+    <section class="filler-video" id="s5"></section>
+    <section class="filler" id="label5">
+      <div class="label right" id="propulsion">
+        <h3>
+          <svg height="30" width="120" data-left-offset="-120px">
+            <polyline
+              points="0,30 20,15 120,15"
+              style="fill: none; stroke: white; stroke-width: 1"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          <svg class="mobile" height="2" width="32">
+            <line
+              x1="0"
+              y1="0"
+              x2="32"
+              y2="0"
+              style="stroke: white; stroke-width: 2"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          Propulsion
+        </h3>
+        <p>
+          Propulsion, in simple words, is the force that moves something
+          forward. Our rocket has a Mach no. of 0.78 which means that the
+          velocity is 0.78 times the speed of sound. The Apogee of 10k feet is
+          achieved at a time of 25.4 seconds from liftoff. Apeiron III achieves
+          a max velocity of 954 km/h and a max acceleration of 86.5 m/s².
+        </p>
+      </div>
+    </section>
+    <section class="filler-video" id="s6"></section>
+    <section style="height: 500px" id="for-scroll"></section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/ScrollTrigger.min.js"></script>
+    <script src="index.js"></script>
+    <script defer>
+      window.onload = () => {
+        document.getElementsByClassName("loading-main")[0].style.display =
+          "none";
+        // document.body.style.overflowY = "auto";
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SEDS - Who Are We</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Source+Sans+Pro:wght@300;400&display=swap");
+      p {
+        font-family: "Source Sans Pro", sans-serif;
+        font-size: 2rem;
+      }
+      .heading * {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 300;
+        font-size: 4.8rem;
+      }
+      .heading h2 {
+        font-size: 7rem;
+        line-height: 0.9;
+      }
+      section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 70vh;
+        color: white;
+      }
+      section > .heading {
+        text-align: center;
+        flex: 1;
+      }
+      section > div:not(.heading) {
+        flex: 1.6;
+        padding-right: 40px;
+      }
+      section:nth-child(odd) > div:not(.heading) {
+        padding-left: 40px;
+        padding-right: 0;
+      }
+      section:nth-child(odd) {
+        /* background-color: rgb(205, 205, 205); */
+        /* color: #323; */
+        flex-direction: row-reverse;
+      }
+      p {
+        padding: 7px 20px;
+      }
+      @media screen and (max-width: 700px) {
+        section {
+          flex-direction: column !important;
+          padding: 25px 0;
+        }
+        section p {
+          font-size: 1.7rem;
+        }
+        .heading {
+          margin: 20px;
+        }
+        .heading h2 {
+          font-size: 3.5rem;
+          line-height: 0;
+        }
+        .heading * {
+          font-size: 2.4rem;
+          margin-bottom: 20px;
+        }
+        section > div {
+          margin: 0;
+          padding: 0 !important;
+        }
+        body {
+          padding-top: 6vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu" id="menu">
+      <div
+        class="close"
+        onclick="document.getElementById('menu').classList.remove('open')"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <h2>Projects</h2>
+      <div class="divider"></div>
+      <a class="nav-ele" href="../sacup/">Rocket</a>
+      <a class="nav-ele" href="../cansat/">CanSat</a>
+      <a class="nav-ele" href="../cubesat/">CubeSat</a>
+      <a class="nav-ele" href="../archangel/">R&D</a>
+    </div>
+    <nav class="navbar row">
+      <i
+        id="menu-open"
+        onclick="document.getElementById('menu').classList.add('open')"
+        class="nav-ele fa-solid fa-bars"
+      ></i>
+      <a class="nav-ele" href="../sacup/">Rocket</a>
+      <a class="nav-ele" href="../cansat/">CanSat</a>
+      <img src="../assets/images/seds_logo_w.png" alt="SEDS Logo" />
+      <a class="nav-ele" href="../cubesat/">CubeSat</a>
+      <a class="nav-ele" href="../archangel/">R&D</a>
+      <i class="nav-ele fa fa-search" aria-hidden="true"></i>
+    </nav>
+    <div style="height: 12.5vh"></div>
+    <section id="about" style="border: 2px solid red">
+      <div class="heading">
+        <h2>ABOUT</h2>
+        <div>SEDS BPHC</div>
+      </div>
+      <div>
+        <p>
+          SEDS BPHC was founded in April 2019 by a group of students with a
+          burning passion for aerospace. Today the club has proudly grown into
+          an 80+ member strong team. The club started out by competing in the
+          Spaceport America Cup, and has since expanded to cubesats, cansats,
+          rocket motors and thrust vector control projects.
+        </p>
+
+        <p>
+          The team is an amalgamation of undergraduate students from almost all
+          fields of engineering and science in our college. Mechanical
+          Engineering, Computer Science, Biology, Electronics and Communication
+          Engineering, Physics are to name a few.
+        </p>
+
+        <p>
+          This season, we aim to launch our first rocket on-site at the
+          Spaceport America Cup 2022 and participate in the Cansat Competition
+          organized by the American Astronautical Society. We are also designing
+          two CubeSats which we plan to launch in the near future.Our newly
+          established R&D division is testing solid rocket motors and intends to
+          work with hybrid motors soon. Thrust Vector Control is also an area of
+          research for the team.
+        </p>
+      </div>
+    </section>
+    <section>
+      <div class="heading">
+        <h2>SA Cup</h2>
+      </div>
+      <div>
+        <p>
+          SEDS BPHC made its debut in this prestigious competition in 2021.
+          Among the four BITS Pilani campuses, we’re the first & only one to
+          participate in the SA Cup. We are also one of the only 6 teams
+          representing India among the 153 international teams participating in
+          the competition.
+        </p>
+
+        <p>
+          For our category, the goal is to build a rocket 8 feet long, weighing
+          approximately 28kg, which flies upto 10,000 feet and uses
+          Commercially-off-the-shelf (COTS) solid rocket motors.
+        </p>
+      </div>
+    </section>
+    <section>
+      <div class="heading">
+        <h2>CANSAT</h2>
+      </div>
+      <div>
+        <p>
+          Team Janus represents our campus in the annual international CanSat
+          competition. The CanSat competition is designed to reflect a typical
+          aerospace program on a small scale. Every year, unique challenges are
+          designed to reflect real-world missions, including telemetry
+          requirements, communications, and autonomous operations.
+        </p>
+        <p>
+          For the 2021 mission, the team was required to develop two
+          auto-rotating science payloads that descend like a maple-seed, to be
+          integrated into the CanSat container. The team reached the CDR stage
+          despite the covid pandemic!
+        </p>
+        <p>
+          For the 2022 competition, the payload should be connected to the
+          container via a 10m long tether. The mission requires the payload
+          camera to maintain an orientation of 45 degrees south consistently.
+        </p>
+        <p>
+          We hope to achieve new apogees of success in the esteemed competition.
+        </p>
+      </div>
+    </section>
+    <section>
+      <div class="heading"><h2>CUBESAT</h2></div>
+      <div>
+        <p>
+          Cubesats are small, highly sophisticated satellites with a wide range
+          of applications, including communication, earth observation, and
+          defence.
+        </p>
+        <p>The team is working on two satellites: NEMOlite and NEMO.</p>
+        <p>
+          The 1U satellite NEMOlite, which will be launched in 2023, will act as
+          a demonstration satellite, demonstrating our capabilities to build and
+          deploy satellites. The primary goal is to gain some flight time and
+          put the Altitude Determination and Control Subsystems(ADCS) to the
+          test. The NEMO satellite is a remote sensing satellite that will track
+          the level of microplastic in the Gulf of Mannar. NEMO is expected to
+          launch in late 2025.
+        </p>
+        <p>
+          We hope that the data obtained by our observation satellite will
+          assist independent researchers, institutions, and state governments
+          better maintain and protect the ecosystem.
+        </p>
+      </div>
+    </section>
+    <section>
+      <div class="heading">
+        <h2>ARCHANGEL</h2>
+      </div>
+      <div>
+        <p>
+          This is the R&D division of SEDS BPHC. Once technologies mature here,
+          they would be implemented into our various projects. Currently we’re
+          working on:
+        </p>
+        <p>
+          Thrust Vector Control - It is the ability of a rocket to maintain its
+          trajectory in motion by manipulating the direction of thrust coming
+          out of the exhaust of the engine.
+        </p>
+        <p>
+          Rocket Motors - We’ve designed, built and tested E, I, G, and K-class
+          solid rocket motors. We intend to move towards M-class and hybrid
+          rocket motors next.
+        </p>
+      </div>
+    </section>
+    <section>
+      <div class="heading">
+        <h2>ABOUT</h2>
+        <div>BITS</div>
+      </div>
+      <div>
+        <p>
+          Established in 1964 by our founder chairman, Dr. G. D. Birla, Birla
+          Institute of Technology and Science (BITS) is a brainchild of the
+          founder’s grandfather and his lifelong dream that he made come true.
+          The Hyderabad Campus, established in 2008, is the youngest of the four
+          campuses, with over 4000 students and 350 faculty and staff members.
+          Multiple clubs and chapters run by our enthusiastic and devoted
+          students, our humongous fests and academic rigor have shaped our
+          diverse campus culture over the years. Giving rise to hundreds of
+          successful start-ups, BITS has always strived to light the fire of
+          entrepreneurship and invention in every student of the university.
+        </p>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/ScrollTrigger.min.js"></script>
+    <script src="ani.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

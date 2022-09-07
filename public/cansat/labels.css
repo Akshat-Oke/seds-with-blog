@@ -1,0 +1,78 @@
+.label {
+  z-index: 100;
+  position: fixed;
+  left: 30%;
+  top: 30%;
+  color: black;
+}
+.label > div,
+.label h3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+.label.right svg {
+  position: absolute;
+  left: -120px;
+}
+.label h3 {
+  font-size: 2.2rem;
+  font-weight: 400;
+}
+.label p {
+  max-width: 250px;
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+.label li {
+  max-width: 300px;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+.label svg.mobile {
+  display: none;
+}
+.label svg:not(svg.mobile) {
+  display: block;
+}
+@media screen and (max-width: 650px) {
+  canvas {
+    max-width: 230vw;
+    max-height: 83vh;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .label p,
+  .label ul {
+    display: none;
+  }
+  .label svg {
+    width: 75px;
+  }
+  .label.right svg {
+    position: absolute;
+    left: -33px;
+  }
+  .label.right#avionics svg {
+    left: -52px;
+  }
+  .label h3 {
+    font-size: 1.7rem;
+  }
+  .label svg.mobile {
+    display: block;
+  }
+  .label svg:not(svg.mobile) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .hide-early {
+    display: none;
+  }
+}
+.label h3 {
+  line-height: 1;
+}
