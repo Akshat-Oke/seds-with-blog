@@ -7,7 +7,11 @@ function MyApp({ Component, pageProps }) {
   const userData = useUserData();
   return (
     <>
-      <div><Toaster /></div>
+      <div><Toaster toastOptions={{
+        style: {
+          fontSize: '1.6rem'
+        }
+      }} /></div>
       <UserContext.Provider value={userData}>
         <Navbar />
         <Component {...pageProps} />

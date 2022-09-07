@@ -2,6 +2,7 @@ import PostContent from "../../components/PostContent.js";
 import { useDocumentData } from "react-firebase-hooks/firestore";
 import { auth, db, postToJSON } from "../../lib/firebase";
 import { doc, getDoc, collection, getDocs } from 'firebase/firestore'
+import toast from 'react-hot-toast'
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
@@ -35,6 +36,7 @@ export async function getStaticPaths() {
 }
 
 export default function PostDetailpage({ post }) {
+  toast.remove();
   return (
     <main style={{ paddingTop: "12vh" }}>
       <PostContent post={post} />

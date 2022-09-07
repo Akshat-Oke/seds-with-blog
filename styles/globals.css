@@ -438,3 +438,24 @@ a.admin::after {
   bottom: -1px;
   left: 0;
 }
+.signout {
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(101, 195, 195);
+  padding: 3px 6px;
+  transition: 0.3s;
+}
+.signout:not(nav .signout) {
+  margin-top: 5px;
+  font-size: 1.8rem;
+}
+.signout:hover {
+  background-color: rgb(76, 154, 154);
+  cursor: pointer;
+}
+@media screen and (max-width: 500px) {
+  nav .signout {
+    display: none;
+  }
+}

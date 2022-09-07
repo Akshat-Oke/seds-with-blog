@@ -16,7 +16,7 @@ export default function AdminPage({ }) {
   }
   return (
     user ? <SignOutButton /> :
-      <div>
+      <main>
         <h1>Admin Page</h1>
         <div id="#firebaseui-auth-container"></div>
         {/* form for password */}
@@ -25,6 +25,6 @@ export default function AdminPage({ }) {
         <input type="password" placeholder="password"
           value={password} onChange={p} />
         <button onClick={onSubmit}>Log in</button>
-      </div>
+      </main>
   )
 }

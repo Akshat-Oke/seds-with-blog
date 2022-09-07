@@ -51,6 +51,7 @@ function NavBarNew() {
         >
           <i className="fa-solid fa-xmark"></i>
         </div>
+        {user && <Link href="/admin"><a className="nav-ele admin">Admin</a></Link>}
         <h2>Projects</h2>
         <div className="divider"></div>
         <a className="nav-ele" href="../sacup/">Rocket</a>
@@ -58,6 +59,7 @@ function NavBarNew() {
         <a className="nav-ele" href="../cubesat/">CubeSat</a>
         <Link href="/posts/"><a className="nav-ele">Blog</a></Link>
         <a className="nav-ele" href="../archangel/">R&D</a>
+        {user && <SignOutButton />}
       </div>
       <nav className="navbar row">
         <i
@@ -65,12 +67,13 @@ function NavBarNew() {
           onClick={addClass}
           className="nav-ele fa-solid fa-bars"
         ></i>
+        {user && <Link href="/admin"><a className="nav-ele admin">Admin</a></Link>}
         <a className="nav-ele" href="../sacup/">Rocket</a>
         <a className="nav-ele" href="../cansat/">CanSat</a>
-        {user && <Link href="/admin"><a className="nav-ele admin">SEDS Admin</a></Link>}
-        {!user && <img src="/assets/images/seds_logo_w.png" alt="SEDS Logo" />}
+        <img src="/assets/images/seds_logo_w.png" alt="SEDS Logo" />
         <a className="nav-ele" href="../cubesat/">CubeSat</a>
         <a className="nav-ele" href="../archangel/">R&D</a>
+        {user && <SignOutButton />}
         <i className="nav-ele fa fa-search" aria-hidden="true"></i>
       </nav>
     </>

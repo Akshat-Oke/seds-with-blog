@@ -2,6 +2,10 @@
   background-color: black;
   color: #eee;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .container {
   display: flex;
@@ -44,10 +48,32 @@
   background-color: black;
   color: white;
 }
-
+.post_wrapper {
+  width: min-content;
+  min-width: 171px;
+  margin: auto;
+}
+.navigate {
+  float: right;
+}
+.navigate > i {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  transition: 0.3s;
+}
+.navigate > i:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.navigate > i:first-child {
+  margin-right: 10px;
+}
 .post_grid {
   display: grid;
   min-width: 171px;
+  margin: 0;
+  padding: 0;
   margin: auto;
   width: min-content;
   grid-template-columns: repeat(3, 1fr);
@@ -55,9 +81,87 @@
   grid-gap: 43px 49px;
   padding: 20px;
 }
-div.post {
-  background-color: red;
-  width: 120px;
-  height: 120px;
+
+div.post,
+div.post_no_cover {
+  position: relative;
+  width: 150px;
+  height: 150px;
   border-radius: 6px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 0.3s;
+}
+.post_data {
+  z-index: 1;
+  visibility: hidden;
+  height: 0;
+  transition: 0.4s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 6px 6px 0 0;
+  color: black;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.post:hover .post_data,
+.post_no_cover .post_data {
+  height: 100%;
+  visibility: visible;
+}
+h2.post_title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.post_date {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+@media (max-width: 500px) {
+  .post_wrapper {
+    margin-top: 50px;
+  }
+  .navigate i {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 8px 12px;
+  }
+  .post_grid {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .main {
+    height: auto;
+    min-height: 100vh;
+  }
+  div.post,
+  div.post_no_cover {
+    max-width: 200px;
+    min-width: 200px;
+    max-height: 200px;
+    min-height: 200px;
+    width: 80vw;
+    height: 80vw;
+  }
+  div.post_data {
+    height: 80% !important;
+    visibility: visible;
+  }
 }
