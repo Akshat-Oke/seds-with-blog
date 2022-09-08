@@ -77,8 +77,8 @@ nav i:last-child {
 nav > * {
   margin: 0 18px;
 }
-nav i.nav-ele {
-  display: none;
+nav i.nav-ele:last-child {
+  visibility: hidden;
 }
 @media screen and (max-width: 720px) {
   nav img {
@@ -89,6 +89,7 @@ nav i.nav-ele {
   }
   nav i.nav-ele {
     display: block;
+    visibility: visible;
   }
 }
 /* Blue underline Link */

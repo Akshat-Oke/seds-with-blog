@@ -19,6 +19,11 @@ const nextConfig = {
         destination: '/home/index.html',
         permanent: true,
       },
+      {
+        source: '/blog',
+        destination: '/posts',
+        permanent: true,
+      },
       ...redirectObjects,
     ]
   }

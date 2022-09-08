@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SEDS - Sponsors</title>
-    <link rel="stylesheet" href="../css/style.css" />
     <style>
       html {
         scroll-behavior: smooth;
@@ -121,8 +120,37 @@
         display: none;
       }
     </style>
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
+    <div class="menu" id="menu">
+      <div
+        class="close"
+        onclick="document.getElementById('menu').classList.remove('open')"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <h2>Projects</h2>
+      <div class="divider"></div>
+      <a class="nav-ele" href="/about">Who Are We</a>
+      <a class="nav-ele" href="/team">Team</a>
+      <a class="nav-ele" href="/sponsors">Sponsors</a>
+      <a class="nav-ele" href="/posts">Blog</a>
+      <a class="nav-ele" href="/contact">Contact</a>
+    </div>
+    <nav class="navbar row">
+      <i
+        id="menu-open"
+        onclick="document.getElementById('menu').classList.add('open')"
+        class="nav-ele fa-solid fa-bars"
+      ></i>
+      <a class="nav-ele" href="../sacup/">Rocket</a>
+      <a class="nav-ele" href="../cansat/">CanSat</a>
+      <img src="../assets/images/seds_logo_w.png" alt="SEDS Logo" />
+      <a class="nav-ele" href="../cubesat/">CubeSat</a>
+      <a class="nav-ele" href="../archangel/">R&D</a>
+      <i class="nav-ele fa fa-search" aria-hidden="true"></i>
+    </nav>
     <main>
       <h1>Sponsors</h1>
       <div class="line"></div>
@@ -198,7 +226,7 @@
         </div>
       </section>
     </main>
-    <nav class="navbar row">
+    <!-- <nav class="navbar row">
       <i class="nav-ele fa-solid fa-bars"></i>
       <a class="nav-ele">Rocket</a>
       <a class="nav-ele">CanSat</a>
@@ -206,6 +234,6 @@
       <a class="nav-ele">CubeSat</a>
       <a class="nav-ele">R&D</a>
       <i class="nav-ele fa fa-search" aria-hidden="true"></i>
-    </nav>
+    </nav> -->
   </body>
 </html>
