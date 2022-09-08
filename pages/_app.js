@@ -10,6 +10,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Ubuntu:wght@300;500&display=swap" />
       </Head>
       <div><Toaster toastOptions={{
         style: {
