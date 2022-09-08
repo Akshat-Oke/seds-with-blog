@@ -1,9 +1,10 @@
 import { SignOutButton, signInAdmin } from "../../lib/firebase";
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { UserContext } from "../../lib/context"
 export default function AdminPage({ }) {
   const [username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
-  const user = null;
+  const user = useContext(UserContext);
   const u = ({ target }) => {
     console.log(target.value)
     setUsername(target.value);
@@ -15,7 +16,10 @@ export default function AdminPage({ }) {
     signInAdmin(username, password);
   }
   return (
-    user ? <SignOutButton /> :
+    user ? <main>
+      <br /><br />
+      <SignOutButton />
+    </main> :
       <main>
         <h1>Admin Page</h1>
         <div id="#firebaseui-auth-container"></div>
