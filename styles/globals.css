@@ -129,14 +129,14 @@ nav i:hover,
 }
 nav i:first-child {
   margin-right: auto;
-  margin-left: 5vw;
+  margin-left: 2.8vw;
 }
 nav i:last-child {
   margin-left: auto;
-  margin-right: 5vw;
+  margin-right: 2.8vw;
 }
 nav > * {
-  margin: 0 18px;
+  margin: 0 37px;
 }
 nav i.nav-ele {
   /* display: none; */
@@ -198,6 +198,9 @@ h1 {
 nav a {
   text-decoration: none;
   color: white !important;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 a {
   text-decoration: none;

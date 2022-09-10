@@ -6,7 +6,7 @@ import toast from 'react-hot-toast'
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
-  console.log("slug", slug);
+  // console.log("slug", slug);
   let post, path;
   const docRef = doc(db, "posts", slug);
   const docSnap = await getDoc(docRef)
@@ -18,7 +18,7 @@ export async function getStaticProps({ params }) {
   }
   return {
     props: { post, path },
-    revalidate: 50000
+    revalidate: 3600
   }
 }
 export async function getStaticPaths() {

@@ -4,71 +4,71 @@ import Cards from '../components/TeamCards/cards';
 import styles from '../styles/teams/teams.module.css'
 
 function Teams() {
-    const [number, setNumber] = useState(0);
-    const data22 = [
-        {
-        img: "",
-        name: 'Akshat Oke',
-        por: "seggs god",
-        hrefL: "abc.com",
-        hrefF:"hub.com"
+  const [number, setNumber] = useState(0);
+  const data22 = [
+    {
+      img: "",
+      name: 'Akshat Oke',
+      por: "seggs god",
+      hrefL: "abc.com",
+      hrefF: "hub.com"
     },
-        {
-        img: "",
-        name: 'Paritosh Kadam',
-        por: "seggs god",
-        hrefL: "abc.com",
-        hrefF:"hub.com"
+    {
+      img: "",
+      name: 'Paritosh Kadam',
+      por: "seggs god",
+      hrefL: "abc.com",
+      hrefF: "hub.com"
     },
-        {
-        img: "",
-        name: 'Siddhant Sarkar',
-        por: "seggs god",
-        hrefL: "abc.com",
-        hrefF:"hub.com"
+    {
+      img: "",
+      name: 'Siddhant Sarkar',
+      por: "seggs god",
+      hrefL: "abc.com",
+      hrefF: "hub.com"
     },
-        {
-        img: "",
-        name: 'christopher nolan',
-        por: "seggs god",
-        hrefL: "abc.com",
-        hrefF:"hub.com"
+    {
+      img: "",
+      name: 'christopher nolan',
+      por: "seggs god",
+      hrefL: "abc.com",
+      hrefF: "hub.com"
     },
-        {
-        img: "",
-        name: 'hero Alom',
-        por: "seggs god",
-        hrefL: "abc.com",
-        hrefF:"hub.com"
+    {
+      img: "",
+      name: 'hero Alom',
+      por: "seggs god",
+      hrefL: "abc.com",
+      hrefF: "hub.com"
     },
-        {
-        img: "",
-        name: 'hero Alom',
-        por: "seggs god",
-        hrefL: "abc.com",
-        hrefF:"hub.com"
+    {
+      img: "",
+      name: 'hero Alom',
+      por: "seggs god",
+      hrefL: "abc.com",
+      hrefF: "hub.com"
     },
-    ]
-    const data21 = [{
-        img: "",
-        name: 'hero Alom',
-        por: "seggs god",
-        hrefL: "abc.com",
-        hrefF:"hub.com"
-    }]
-    const data20 = [{
-        img: "",
-        name: 'hero Alom',
-        por: "seggs god",
-        hrefL: "abc.com",
-        hrefF:"hub.com"
+  ]
+  const data21 = [{
+    img: "",
+    name: 'hero Alom',
+    por: "seggs god",
+    hrefL: "abc.com",
+    hrefF: "hub.com"
+  }]
+  const data20 = [{
+    img: "",
+    name: 'hero Alom',
+    por: "seggs god",
+    hrefL: "abc.com",
+    hrefF: "hub.com"
   }]
 
   const [year, setyear] = useState('2021-2022');
   const [drop, setDrop] = useState(false);
 
   return (
-    <div>
+    <main>
       <div className={styles.left}>
         <div className={styles.line}></div>
         <div className={styles.times}>
@@ -163,7 +163,7 @@ function Teams() {
           <Cards datas={data20} />
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 

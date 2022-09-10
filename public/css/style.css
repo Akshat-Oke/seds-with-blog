@@ -41,6 +41,9 @@ canvas {
   max-height: 100vh;
   /* border: 2px solid red; */
 }
+#menu-open:hover {
+  cursor: pointer;
+}
 nav {
   z-index: 998;
   position: fixed;
@@ -68,14 +71,14 @@ nav i {
 }
 nav i:first-child {
   margin-right: auto;
-  margin-left: 5vw;
+  margin-left: 2.8vw;
 }
 nav i:last-child {
   margin-left: auto;
-  margin-right: 5vw;
+  margin-right: 2.8vw;
 }
 nav > * {
-  margin: 0 18px;
+  margin: 0 37px;
 }
 nav i.nav-ele:last-child {
   visibility: hidden;
@@ -137,6 +140,9 @@ h1 {
 nav a {
   text-decoration: none;
   color: white !important;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 a {
   text-decoration: none;

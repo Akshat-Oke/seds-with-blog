@@ -16,19 +16,19 @@ export default function AdminPage({ }) {
     signInAdmin(username, password);
   }
   return (
-    user ? <main>
-      <br /><br />
-      <SignOutButton />
-    </main> :
-      <main>
-        <h1>Admin Page</h1>
-        <div id="#firebaseui-auth-container"></div>
-        {/* form for password */}
-        <input type="email" placeholder="email" value={username} onChange={u} />
-        <br />
-        <input type="password" placeholder="password"
-          value={password} onChange={p} />
-        <button onClick={onSubmit}>Log in</button>
-      </main>
+    // user ? <main>
+    //   <br /><br />
+    //   <SignOutButton />
+    // </main> :
+    <main>
+      <h1>Admin Page</h1>
+      <div id="#firebaseui-auth-container"></div>
+      {/* form for password */}
+      <input type="email" placeholder="email" value={username} onChange={u} />
+      <br />
+      <input type="password" placeholder="password"
+        value={password} onChange={p} />
+      <button onClick={onSubmit}>Log in</button>
+    </main>
   )
 }
