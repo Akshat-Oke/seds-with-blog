@@ -11,6 +11,9 @@
   display: flex;
   align-items: center;
 }
+.metadata {
+  text-align: center;
+}
 .post_edit_button i {
   font-size: 3rem;
   /* color: #16a38c; */

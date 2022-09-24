@@ -339,3 +339,6 @@ a:active {
 ::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.2);
 }
+a.hero-link {
+  z-index: 99;
+}
