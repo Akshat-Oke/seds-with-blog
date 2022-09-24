@@ -27,7 +27,8 @@ export async function getServerSideProps() {
 }
 
 export default function PostsPage(props) {
-  let filterType = FILTER.chronological;
+  // let filterType = FILTER.chronological;
+  const [filterType, setFilterType] = useState(FILTER.chronological);
   const [page, setPage] = useState(1);
   const [posts, setPosts] = useState(props.posts);
   const [loading, setLoading] = useState(false);
@@ -43,7 +44,7 @@ export default function PostsPage(props) {
   }
   const handleFilter = async (filter) => {
     const tid = toast.loading("Loading...")
-    filterType = filter;
+    setFilterType(filter);
     const q = query(collection(db, "posts"), where("published", "==", true), orderBy(filter, "desc"), limit(6));
     const newPosts = (await getDocs(q)).docs.map(doc => postToJSON(doc));
     setPage(1);
@@ -76,20 +77,22 @@ export default function PostsPage(props) {
     }
     console.log("marker", marker);
     console.log("orderByField", orderByField);
+    console.log("filterType", filterType);
     // return;
     let q = query(collection(db, "posts"), where("published", "==", true), orderBy(orderByField, "desc"), cursorFunc(marker), limit(6));
     if (filterType == FILTER.popular) {
-      q = query(collection(db, "posts"), where("published", "==", true), orderBy(orderByField, "desc"), orderBy("date", "desc"), cursorFunc(marker), limit(6));
+      q = query(collection(db, "posts"), where("published", "==", true), orderBy("date", "desc"), orderBy(orderByField, "desc"), cursorFunc(marker), limit(6));
 
     }
     const newPosts = (await getDocs(q)).docs.map(doc => postToJSON(doc));
     if (newPosts.length == 0) {
       toast.error("No more posts");
-      return;
+      // return;
+    } else {
+      page += pageIncrement;
+      setPage(page);
+      setPosts(newPosts);
     }
-    page += pageIncrement;
-    setPage(page);
-    setPosts(newPosts);
     toast.remove(tid);
   }
   return (

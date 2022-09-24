@@ -22,6 +22,7 @@ export default function AdminPage({ }) {
     // </main> :
     <main>
       <h1>Admin Page</h1>
+      {user && <h4>Signed in</h4>}
       <div id="#firebaseui-auth-container"></div>
       {/* form for password */}
       <input type="email" placeholder="email" value={username} onChange={u} />

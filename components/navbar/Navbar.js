@@ -12,7 +12,7 @@ function Navbar() {
     <>
       <div className={styles.container}>
         <div className={styles.buttons}>
-          <Link href=""> Rocket</Link>
+          <Link href="/about"> Who are we</Link>
         </div>
         <div className={styles.buttons}>
           <Link href=""> CanSat</Link>
@@ -54,11 +54,11 @@ function NavBarNew() {
         {user && <Link href="/admin"><a className="nav-ele admin">Admin</a></Link>}
         <h2>Projects</h2>
         <div className="divider"></div>
-        <a className="nav-ele" href="../sacup/">Rocket</a>
-        <a className="nav-ele" href="../cansat/">CanSat</a>
-        <a className="nav-ele" href="../cubesat/">CubeSat</a>
+        <a className="nav-ele" href="/about/">Who are we</a>
+        <Link href="/teams/"><a className="nav-ele">Team</a></Link>
         <Link href="/posts/"><a className="nav-ele">Blog</a></Link>
-        <a className="nav-ele" href="../archangel/">R&D</a>
+        <a className="nav-ele" href="/about/">Sponsors</a>
+        <a className="nav-ele" href="../contact/">Contact</a>
         {user && <SignOutButton />}
       </div>
       <nav className="navbar row">

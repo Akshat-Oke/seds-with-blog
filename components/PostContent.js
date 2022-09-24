@@ -7,7 +7,7 @@ import { getStringFromDate } from "../lib/date";
 import Metatags from "./Metatags";
 export default function PostContent({ post }) {
   const { user, username } = React.useContext(UserContext)
-
+  console.log("views", post.views);
   const date = typeof post?.date === 'number' ? new Date(post.date) : post.date.toDate();
   const cover = post.coverImage;
   return (
