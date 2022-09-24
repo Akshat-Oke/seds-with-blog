@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   async redirects() {
-    const pages = ['home', 'sacup', 'cansat', 'cubesat', 'archangel', 'contact', 'about'];
+    const pages = ['home', 'sacup', 'cansat', 'cubesat', 'archangel', 'contact', 'about', 'sponsors'];
     const redirects = pages.map((page) => `/${page}/index.html`);
     const redirectObjects = [];
     redirects.forEach((redirect, i) => {

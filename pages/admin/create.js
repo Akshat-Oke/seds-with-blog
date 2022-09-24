@@ -46,8 +46,9 @@ function CreateNewPost() {
     e.preventDefault();
     const data = {
       title, slug,
-      author: "a",
+      author: "SEDS",
       published: false,
+      views: 0,
       date: serverTimestamp(),
       content: "# Hello world\nVery nice.\n\n---\n\n*This* is a post.",
     }

@@ -65,6 +65,8 @@ function PostForm({ defaultValues, postRef, preview }) {
           <div className={style.controls}>
             <h3>Cover image</h3>
             <input className={style.coverImage} type="text" placeholder="Cover Image URL" {...register('coverImage')} />
+            <h3>Author name</h3>
+            <input className={style.coverImage} type="text" placeholder="Author name" {...register('author')} />
             <h3>Content</h3>
             <textarea name="content" {...register("content")} />
             <fieldset>
