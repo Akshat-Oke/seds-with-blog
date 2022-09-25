@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SEDS - Admin Info</title>
+    <link rel="stylesheet" href="./css/external/pico.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>SEDS - Admin Info</h1>
+      <p>
+        This page is meant for people at SEDS who want to publish blog articles
+        on this website.
+      </p>
+      <blockquote>
+        <strong>Note:</strong> The urls are represented in the form <code>/path</code>. This means that you have to append the url (path) to the base url (host) of the website. For example, if you want to access the <code>/admin</code> page, you have to go to <code>https://<span id="url">seds-bphc.vercel.com</span>/admin</code>.
+      </blockquote>
+      <hr />
+      <h2>Getting started <code>/admin</code></h2>
+      <p>
+        Obtain the email and password for the admin account from your division
+        head. Go to <a href="/admin">the admin page at /admin</a> and log in.
+      </p>
+      <small>The UI is terrible, I know</small>
+      <blockquote>
+        You should see a sign out button in the navbar on logging in
+      </blockquote>
+      <section>
+        <h2>Creating an article <code>/admin/create</code></h2>
+        <p>
+          Go to <code><a href="/admin/create">/admin/create</a></code> and enter
+          the title of the blog. Currently titles cannot be changed from the
+          website frontend. The title will be used as the URL slug for the blog,
+          so <mark>make sure it's unique.</mark>
+        </p>
+        <blockquote>
+          Example: If the title is <b>Intro to Archangel</b>, the url will be
+          <code>/posts/intro-to-archangel</code>. There is presently no checking
+          done to assert that the title is unique.
+        </blockquote>
+        <p>
+          On entering the title, you will be redirected to the post edit page.
+        </p>
+        <h3>Post edit page <code>/posts/{slug}</code></h3>
+        <p>
+          Ensure that you are logged in as the admin, otherwise you will see a
+          link to go back instead.
+          <blockquote>
+            To edit a particular post, click the pen icon in the bottom right of the page while viewing the article (<code>/posts/article-slug</code> page).
+          </blockquote>
+        </p>
+        <h4>Post content</h4>
+        <p>
+          Write your post in the
+          <a href="https://www.markdownguide.org/">Markdown format</a>. You can
+          use any Markdown editors (<a href="https://stackedit.io/">like this</a
+          >) or type it manually. Paste the markdown in the textbox under the
+          title <b>Content</b>. Enter the author name above as well.
+        </p>
+        <h4>Cover image</h4>
+        <p>
+          The cover image is what will be shown on the blog home page at
+          <code>/posts</code> as article thumbnails. To upload an image, click
+          on the <b>Upload Image</b> button and select your image. You will then
+          see the url of the image stored in the database, in this format:
+          <code>![alt](download-url-here-copy-this)</code>. Copy the url from
+          the <code>download-url-here-copy-this</code> part of the format and
+          paste it in the <b>Cover Image</b> field.
+        </p>
+        <h4>Inserting images</h4>
+        <p>
+          To insert inline images in the blog article, upload the image as
+          mentioned above and copy paste the whole returned format. Change the
+          <code>alt</code> string to the image's description (alt text on
+          hover).
+        </p>
+        <h4>Publishing</h4>
+        <p>
+          To publish, scroll the post edit page to the bottom and check the
+          checkbox that says <b>Published</b> and click
+          <code>Save Changes</code>.
+        </p>
+        <blockquote>
+          If you uncheck the <b>Published</b> checkbox, the post will not show
+          up in the blog thumbnail grid but can be viewed by manually going to
+          its url.
+        </blockquote>
+        <h4>Preview</h4>
+        <p>You can preview your article on the same edit page by clicking the <code>Preview</code> button under <b>"Tools"</b>. To view the live version as it would appear for users, click the <b>Live view</b> button.</p>
+        <blockquote>
+          <strong>Note:</strong> The style in the preview is not the same as the live version. The preview is meant to give you an idea of how the article will look like.
+          <p>
+            <small>Credits to <code>GitHub Copilot</code> (actually the repo from which Copilot itself learnt from) to help me sell this fact as a feature rather than an unimplemented feature. Perhaps someone else might fix this someday.</small>
+          </p>
+          </blockquote>
+      </section>
+    </div>
+    <script>
+      document.getElementById("url").innerText = window.location.host;
+    </script>
+  </body>
+</html>

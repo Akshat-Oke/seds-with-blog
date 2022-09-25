@@ -40,6 +40,9 @@ function PostManager() {
             <Link href={`/posts/${post.slug}`}>
               <button className={style.btn_blue}>Live view</button>
             </Link>
+            <a className={style.btn_black} href="/admin-info.html">
+              Tutorial
+            </a>
           </aside>
         </>
       )}

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import style from "../pages/posts/post.module.css"
+import postStyles from "../pages/posts/post-generic.module.css"
 import ReactMarkdown from "react-markdown";
 import React from 'react';
 import { UserContext } from "../lib/context.js"
@@ -35,7 +36,9 @@ export default function PostContent({ post }) {
         </div>
         <div className={style.divider}></div>
         <div className={style.content}>
-          <ReactMarkdown>{post.content}</ReactMarkdown>
+          <div className={postStyles.blog}>
+            <ReactMarkdown>{post.content}</ReactMarkdown>
+          </div>
         </div>
       </div>
     </>

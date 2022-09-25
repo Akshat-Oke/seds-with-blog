@@ -34,7 +34,7 @@ form.post_form fieldset {
   font-size: 20px;
 }
 
-button.previewButton {
+.previewButton {
   background-color: #4caf50;
   border: none;
   color: white;
@@ -46,7 +46,8 @@ button.previewButton {
   margin: 4px 2px;
   cursor: pointer;
 }
-button.btn_blue,
+.btn_blue,
+.btn_black,
 .submit {
   background-color: #4a93e0;
   border: none;
@@ -58,6 +59,10 @@ button.btn_blue,
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+}
+.btn_black {
+  background-color: rgba(0, 0, 0);
+  color: #eee;
 }
 .submit {
   margin-bottom: 30px;
