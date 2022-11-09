@@ -24,6 +24,11 @@ const nextConfig = {
         destination: '/posts',
         permanent: true,
       },
+      {
+        source: '/team',
+        destination: '/teams',
+        permanent: true,
+      },
       ...redirectObjects,
     ]
   }

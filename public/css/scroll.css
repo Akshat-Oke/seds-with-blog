@@ -12,7 +12,7 @@
 .mouse {
   position: relative;
   height: 30px;
-  width: 2px;
+  width: 3px;
   z-index: 100;
 }
 .mouse::before {

@@ -60,7 +60,7 @@ function NavBarNew() {
         <a className="nav-ele" href="/about/">Who are we</a>
         <Link href="/teams/"><a className="nav-ele">Team</a></Link>
         {/* <h2>Projects</h2> */}
-        <a className="nav-ele" href="#!" onClick={() => toggleClass("mobile-dropdown", "active")}>Projects</a>
+        <a className="nav-ele mobile-projects" href="#!" onClick={() => toggleClass("mobile-dropdown", "active")}>Projects</a>
         <div className="mobile-dropdown" id="mobile-dropdown">
           {/* <div className="divider"></div> */}
           <a className="nav-project" href="../sacup/">Rocket</a>
@@ -73,7 +73,7 @@ function NavBarNew() {
         <a className="nav-ele" href="../contact/">Contact</a>
         {user && <SignOutButton />}
       </div>
-      <nav className="navbar row" style={{ filter: invertNav ? "invert(0.9)" : "invert(0)" }}>
+      <nav className={`navbar row ${invertNav ? "invert" : ""}`}>
         <i
           id="menu-open"
           onClick={addClass}
@@ -82,7 +82,7 @@ function NavBarNew() {
         {user && <Link href="/admin"><a className="nav-ele admin">Admin</a></Link>}
         <a className="nav-ele" href="../sacup/">Rocket</a>
         <a className="nav-ele" href="../cansat/">CanSat</a>
-        <a href="/?#end"> <img src="/assets/images/seds_logo_w.png" alt="SEDS Logo" /></a>
+        <Link href="/home/index.html?#end"><a><img src="/assets/images/seds_logo_w.png" alt="SEDS Logo" /></a></Link>
         <a className="nav-ele" href="../cubesat/">CubeSat</a>
         <a className="nav-ele" href="../archangel/">R&D</a>
         {user && <SignOutButton />}

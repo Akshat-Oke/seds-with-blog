@@ -142,7 +142,8 @@ nav i.nav-ele {
   /* display: none; */
   display: block;
 }
-.mobile-projects {
+.mobile-projects,
+.mobile-dropdown {
   display: none;
 }
 .mobile-dropdown {
@@ -177,7 +178,8 @@ a.nav-project {
     display: none;
   }
   nav i.nav-ele,
-  .mobile-projects {
+  .mobile-projects,
+  .mobile-dropdown {
     display: block;
     visibility: visible;
   }
@@ -536,4 +538,16 @@ a.admin::after {
   :root {
     --font-size: 18px;
   }
+}
+nav.invert {
+  /* filter: invert(0.9); */
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(5px);
+}
+nav.invert a,
+nav.invert i {
+  filter: invert(0.9);
+  color: white !important;
+  /* background-blend-mode: difference; */
+  /* background: white; */
 }
