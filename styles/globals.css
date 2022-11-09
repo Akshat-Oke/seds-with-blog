@@ -142,15 +142,44 @@ nav i.nav-ele {
   /* display: none; */
   display: block;
 }
+.mobile-projects {
+  display: none;
+}
+.mobile-dropdown {
+  height: 0;
+  transition: 0.4s;
+  visibility: hidden;
+  opacity: 0;
+  text-align: center;
+}
+.mobile-dropdown.active {
+  height: 136px;
+  opacity: 1;
+  visibility: visible;
+}
+a.nav-project {
+  display: block;
+  font-size: 1.6rem !important;
+  color: #3e3e5a !important;
+  font-size: 2rem;
+}
 @media screen and (max-width: 720px) {
+  nav {
+    height: 10vh;
+  }
   nav img {
     height: 70%;
   }
   nav a {
     display: none;
   }
-  nav i.nav-ele {
+  nav a.nav-ele {
+    display: none;
+  }
+  nav i.nav-ele,
+  .mobile-projects {
     display: block;
+    visibility: visible;
   }
 }
 /* Blue underline Link */

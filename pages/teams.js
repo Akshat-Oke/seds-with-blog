@@ -2,10 +2,15 @@ import React from 'react'
 import { useState } from 'react'
 import Cards from '../components/TeamCards/cards';
 import styles from '../styles/teams/teams.module.css'
+import { data22, data21, data20 } from "../lib/team_data";
+
+function getLabel(year) {
+  return `20${year}-20${year + 1}`;
+}
 
 function Teams() {
   const [number, setNumber] = useState(0);
-  const data22 = [
+  const data22test = [
     {
       img: "",
       name: 'Akshat Oke',
@@ -49,14 +54,14 @@ function Teams() {
       hrefF: "hub.com"
     },
   ]
-  const data21 = [{
+  const data21test = [{
     img: "",
     name: 'hero Alom',
     por: "seggs god",
     hrefL: "abc.com",
     hrefF: "hub.com"
   }]
-  const data20 = [{
+  const data20test = [{
     img: "",
     name: 'hero Alom',
     por: "seggs god",
@@ -68,7 +73,7 @@ function Teams() {
   const [drop, setDrop] = useState(false);
 
   return (
-    <main>
+    <main style={{ paddingTop: "12.5vh" }}>
       <div className={styles.left}>
         <div className={styles.line}></div>
         <div className={styles.times}>

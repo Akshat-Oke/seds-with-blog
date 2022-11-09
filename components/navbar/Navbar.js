@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import Image from 'next/image';
 import logo from '../../public/sedsblack.svg'
 import styles from '../../styles/navbar/navbar.module.css'
@@ -35,7 +36,11 @@ function Navbar() {
 }
 function NavBarNew() {
   const { user, username } = React.useContext(UserContext)
-
+  const router = useRouter();
+  const invertNav = router.asPath.includes("/teams");
+  function toggleClass(id, className) {
+    document.getElementById(id).classList.toggle(className);
+  }
   function removeClass() {
     document.getElementById('menu').classList.remove('open');
   }
@@ -52,16 +57,23 @@ function NavBarNew() {
           <i className="fa-solid fa-xmark"></i>
         </div>
         {user && <Link href="/admin"><a className="nav-ele admin">Admin</a></Link>}
-        <h2>Projects</h2>
-        <div className="divider"></div>
         <a className="nav-ele" href="/about/">Who are we</a>
         <Link href="/teams/"><a className="nav-ele">Team</a></Link>
+        {/* <h2>Projects</h2> */}
+        <a className="nav-ele" href="#!" onClick={() => toggleClass("mobile-dropdown", "active")}>Projects</a>
+        <div className="mobile-dropdown" id="mobile-dropdown">
+          {/* <div className="divider"></div> */}
+          <a className="nav-project" href="../sacup/">Rocket</a>
+          <a className="nav-project" href="../cansat/">CanSat</a>
+          <a className="nav-project" href="../cubesat/">CubeSat</a>
+          <a className="nav-project" href="../archangel/">R&D</a>
+        </div>
         <Link href="/posts/"><a className="nav-ele">Blog</a></Link>
         <a className="nav-ele" href="/about/">Sponsors</a>
         <a className="nav-ele" href="../contact/">Contact</a>
         {user && <SignOutButton />}
       </div>
-      <nav className="navbar row">
+      <nav className="navbar row" style={{ filter: invertNav ? "invert(0.9)" : "invert(0)" }}>
         <i
           id="menu-open"
           onClick={addClass}
@@ -70,7 +82,7 @@ function NavBarNew() {
         {user && <Link href="/admin"><a className="nav-ele admin">Admin</a></Link>}
         <a className="nav-ele" href="../sacup/">Rocket</a>
         <a className="nav-ele" href="../cansat/">CanSat</a>
-        <img src="/assets/images/seds_logo_w.png" alt="SEDS Logo" />
+        <a href="/?#end"> <img src="/assets/images/seds_logo_w.png" alt="SEDS Logo" /></a>
         <a className="nav-ele" href="../cubesat/">CubeSat</a>
         <a className="nav-ele" href="../archangel/">R&D</a>
         {user && <SignOutButton />}

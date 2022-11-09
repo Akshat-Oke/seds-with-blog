@@ -89,7 +89,7 @@ function video1() {
       onEnter: positionLabels,
     },
     onUpdate: render, // use animation onUpdate instead of scrollTrigger's onUpdate
-  }).to()
+  })
   return renderTimeline;
 }
 function videoResume(startFrame, endFrame, trigger) {

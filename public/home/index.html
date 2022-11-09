@@ -90,6 +90,11 @@
         margin-top: 12.5vh;
         height: 87.5vh;
       }
+      @media screen and (max-width: 750px) {
+        section {
+          margin-top: 10vh;
+        }
+      }
       section > div {
         height: 100%;
       }
@@ -153,6 +158,9 @@
     <div class="mouse-scroll">
       <div class="mouse"></div>
     </div>
+    <!-- <div class="arrow-scroll">
+      <div class="arrow"></div>
+    </div> -->
     <main>
       <div class="menu" id="menu">
         <div
@@ -161,14 +169,13 @@
         >
           <i class="fa-solid fa-xmark"></i>
         </div>
-        <h2>Projects</h2>
-        <div class="divider"></div>
-        <a class="nav-ele" href="../sacup/">Rocket</a>
-        <a class="nav-ele" href="../cansat/">CanSat</a>
-        <a class="nav-ele" href="../cubesat/">CubeSat</a>
+        <!-- <h2>Projects</h2>
+        <div class="divider"></div> -->
+        <a class="nav-ele" href="/about">Who Are We</a>
+        <a class="nav-ele" href="/team">Team</a>
+        <a class="nav-ele" href="/sponsors">Sponsors</a>
         <a class="nav-ele" href="/posts">Blog</a>
         <a class="nav-ele" href="/contact">Contact</a>
-        <a class="nav-ele" href="../archangel/">R&D</a>
       </div>
       <nav class="navbar row">
         <i
@@ -220,6 +227,14 @@
         width: "100vw",
         height: "100vh",
       }).mount();
+      document.addEventListener("DOMContentLoaded", () => {
+        //if url has #end
+        if (window.location.href.includes("#end")) {
+          setTimeout(() => {
+            window.scrollTo(0, document.body.scrollHeight);
+          }, 200);
+        }
+      });
     </script>
   </body>
 </html>

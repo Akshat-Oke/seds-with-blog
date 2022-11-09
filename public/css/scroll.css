@@ -1,5 +1,48 @@
 @import url(https://fonts.googleapis.com/css?family=Cabin);
 
+.mouse-scroll {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mouse {
+  position: relative;
+  height: 30px;
+  width: 2px;
+  z-index: 100;
+}
+.mouse::before {
+  content: "";
+  background: white;
+  height: 80%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: arrScroll 1.8s ease-out infinite;
+  animation-delay: 0.2s;
+}
+.mouse.reverse::before {
+  animation: arrScroll 2s ease-out infinite reverse;
+}
+@keyframes arrScroll {
+  0% {
+    height: 0;
+    bottom: 0;
+  }
+  33% {
+    height: 80%;
+    bottom: 8px;
+  }
+  100% {
+    height: 0;
+    bottom: 40px;
+  }
+}
 /* p {
   margin-top: 50px;
   font-family: "Cabin", sans-serif;
@@ -9,7 +52,7 @@
   -webkit-animation: colorText 5s ease-out infinite, nudgeText 5s ease-out infinite;
           animation: colorText 5s ease-out infinite, nudgeText 5s ease-out infinite;
 } */
-.mouse-scroll {
+.mouse-scroll1 {
   position: fixed;
   bottom: 20px;
   /* left: 50%; */
@@ -20,12 +63,12 @@
   z-index: 100;
 }
 @media screen and (max-width: 900px) {
-  .mouse-scroll {
+  .mouse-scroll1 {
     transform: scale(0.4);
   }
 }
 
-.mouse-scroll::after {
+.mouse-scroll1::after {
   content: "Scroll down";
   font-family: "Ubuntu", sans-serif;
   position: absolute;
@@ -38,10 +81,10 @@
   left: 50%;
   transform: translateX(-50%);
 }
-.mouse-scroll.up::after {
+.mouse-scroll1.up::after {
   content: "Scroll up";
 }
-.mouse {
+.mouse1 {
   background: #4e5559
     linear-gradient(transparent 0%, transparent 50%, #ddd 50%, #ddd 100%);
   position: relative;
@@ -54,8 +97,8 @@
   animation: colorSlide 5s linear infinite, nudgeMouse 5s ease-out infinite;
   /* transform: scale(0.5); */
 }
-.mouse:before,
-.mouse:after {
+.mouse1:before,
+.mouse1:after {
   content: "";
   position: absolute;
   top: 0;
@@ -64,13 +107,13 @@
   left: 0;
   margin: auto;
 }
-.mouse:before {
+.mouse1:before {
   width: 46px;
   height: 82px;
   background-color: #111524;
   border-radius: 100px;
 }
-.mouse:after {
+.mouse1:after {
   background-color: #ada;
   width: 10px;
   height: 10px;

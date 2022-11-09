@@ -13,6 +13,7 @@
 }
 html {
   font-size: 62.5%; /* 1rem = 10px */
+  scroll-behavior: smooth;
 }
 * {
   font-family: "Kanit", sans-serif;
@@ -83,17 +84,50 @@ nav > * {
 nav i.nav-ele:last-child {
   visibility: hidden;
 }
+.mobile-projects {
+  display: none;
+}
+.mobile-dropdown {
+  height: 0;
+  transition: 0.4s;
+  visibility: hidden;
+  opacity: 0;
+}
+.mobile-dropdown.active {
+  height: 136px;
+  opacity: 1;
+  visibility: visible;
+}
+a.nav-project {
+  display: block;
+  font-size: 1.6rem !important;
+  color: #3e3e5a !important;
+  font-size: 2rem;
+}
+
 @media screen and (max-width: 720px) {
+  nav {
+    padding: 0 2.2vw;
+    height: 10vh;
+  }
   nav img {
     height: 70%;
   }
   nav a {
     display: none;
   }
-  nav i.nav-ele {
+  nav a.nav-ele {
+    display: none;
+  }
+  nav i.nav-ele,
+  .mobile-projects {
     display: block;
     visibility: visible;
   }
+  /* canvas {
+    max-height: 88vh !important;
+    top: 9.9vh !important;
+  } */
 }
 /* Blue underline Link */
 
@@ -258,6 +292,7 @@ a:active {
   left: 0;
   /* transform: translateX(-100%); */
   visibility: hidden;
+  backdrop-filter: blur(5px);
   width: 100%;
   /* height: 100%; */
   height: 0;
@@ -303,6 +338,23 @@ a:active {
 }
 .menu .close:hover {
   cursor: pointer;
+}
+@media screen and (min-width: 700px) {
+  .menu {
+    width: 0;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  .menu * {
+    color: white !important;
+  }
+  .menu.open {
+    /* transform: translateX(0); */
+    height: 100vh;
+    width: 300px;
+    visibility: visible;
+    opacity: 1;
+  }
 }
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
