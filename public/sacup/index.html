@@ -105,10 +105,20 @@
       >
         <i class="fa-solid fa-xmark"></i>
       </div>
-      <h2>Projects</h2>
-      <div class="divider"></div>
       <a class="nav-ele" href="/about">Who Are We</a>
       <a class="nav-ele" href="/team">Team</a>
+      <a
+        onclick="document.getElementById('mobile-dropdown').classList.toggle('active')"
+        class="nav-ele mobile-projects"
+        href="#!"
+        >Projects</a
+      >
+      <div class="mobile-dropdown" id="mobile-dropdown">
+        <a class="nav-project" href="../sacup/">Rocket</a>
+        <a class="nav-project" href="../cansat/">CanSat</a>
+        <a class="nav-project" href="../cubesat/">CubeSat</a>
+        <a class="nav-project" href="../archangel/">R&D</a>
+      </div>
       <a class="nav-ele" href="/sponsors">Sponsors</a>
       <a class="nav-ele" href="/posts">Blog</a>
       <a class="nav-ele" href="/contact">Contact</a>

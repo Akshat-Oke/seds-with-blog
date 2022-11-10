@@ -64,9 +64,23 @@
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
     <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="../css/style.css" />
+
     <style>
       @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
-
+      .container {
+        width: unset;
+        display: revert;
+      }
+      html {
+        font-size: 100%;
+      }
+      a.nav-project {
+        font-size: 18px !important;
+      }
+      h1 {
+        font-size: calc(1.375rem + 1.5vw) !important;
+      }
       /* Menu mobile */
       .menu {
         position: fixed;
@@ -124,24 +138,24 @@
       /* ===== Scrollbar CSS ===== */
       /* Firefox */
       /* * {
-  scrollbar-width: thin;
-  scrollbar-color: #ffffff #121212;
-}
+        scrollbar-width: thin;
+        scrollbar-color: #ffffff #121212;
+      }
 
-/* Chrome, Edge, and Safari */
+      /* Chrome, Edge, and Safari */
       *::-webkit-scrollbar {
         width: 10px;
       }
       /*
-*::-webkit-scrollbar-track {
-  background:  #121212;
-}
+      *::-webkit-scrollbar-track {
+        background:  #121212;
+      }
 
-*::-webkit-scrollbar-thumb {
-  background-color: #ffffff;
-  border-radius: 10px;
-  border: 3px solid #ffffff;
-} */
+      *::-webkit-scrollbar-thumb {
+        background-color: #ffffff;
+        border-radius: 10px;
+        border: 3px solid #ffffff;
+      } */
       ::-webkit-scrollbar {
         width: 10px;
         height: 10px;
@@ -261,13 +275,23 @@
       >
         <i class="fa-solid fa-xmark"></i>
       </div>
-      <h2>Projects</h2>
-      <div class="divider"></div>
-      <a class="nav-ele" href="../sacup/">Rocket</a>
-      <a class="nav-ele" href="../cansat/">CanSat</a>
-      <a class="nav-ele" href="../cubesat/">CubeSat</a>
-      <a class="nav-ele" href="../archangel/">R&D</a>
+      <a class="nav-ele" href="/about">Who Are We</a>
+      <a class="nav-ele" href="/team">Team</a>
+      <a
+        onclick="document.getElementById('mobile-dropdown').classList.toggle('active')"
+        class="nav-ele mobile-projects"
+        href="#!"
+        >Projects</a
+      >
+      <div class="mobile-dropdown" id="mobile-dropdown">
+        <a class="nav-project" href="../sacup/">Rocket</a>
+        <a class="nav-project" href="../cansat/">CanSat</a>
+        <a class="nav-project" href="../cubesat/">CubeSat</a>
+        <a class="nav-project" href="../archangel/">R&D</a>
+      </div>
+      <a class="nav-ele" href="/sponsors">Sponsors</a>
       <a class="nav-ele" href="/posts">Blog</a>
+      <a class="nav-ele" href="/contact">Contact</a>
     </div>
     <nav class="navbar1">
       <i

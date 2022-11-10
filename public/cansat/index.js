@@ -76,20 +76,34 @@ images[0].onload = function () {
   positionLabels();
 };
 function video1() {
-  const renderTimeline = gsap.timeline();
-  renderTimeline.to(airpods, {
-    frame: 80 - 1,//frameCount - 1,
-    snap: "frame",
-    ease: "none",
+  const renderTimeline = gsap.timeline({
     scrollTrigger: {
       scrub: 0.8,
       trigger: "#s1",
       start: "top-=100px bottom",
       end: "bottom bottom",
       onEnter: positionLabels,
-    },
+    }
+  });
+  renderTimeline.to(airpods, {
+    frame: 80 - 1,//frameCount - 1,
+    snap: "frame",
+    ease: "none",
+    // scrollTrigger: {
+    //   scrub: 0.8,
+    //   trigger: "#s1",
+    //   start: "top-=100px bottom",
+    //   end: "bottom bottom",
+    //   onEnter: positionLabels,
+    // },
     onUpdate: render, // use animation onUpdate instead of scrollTrigger's onUpdate
   })
+    .fromTo("body", {
+      backgroundColor: "#000",
+      duration: 0.02
+    }, {
+      backgroundColor: "#b8b8b8",
+    }, 0.24)
   return renderTimeline;
 }
 function videoResume(startFrame, endFrame, trigger) {

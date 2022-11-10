@@ -2,6 +2,7 @@
 
 .mouse-scroll {
   position: fixed;
+  z-index: 100;
   bottom: 10px;
   left: 0;
   width: 100%;
@@ -26,7 +27,7 @@
   animation: arrScroll 1.8s ease-out infinite;
   animation-delay: 0.2s;
 }
-.mouse.reverse::before {
+.up .mouse::before {
   animation: arrScroll 2s ease-out infinite reverse;
 }
 @keyframes arrScroll {
