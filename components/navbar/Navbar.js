@@ -13,7 +13,7 @@ function Navbar() {
     <>
       <div className={styles.container}>
         <div className={styles.buttons}>
-          <Link href="/about"> Who are we</Link>
+          <Link href="/about"> Who We Are</Link>
         </div>
         <div className={styles.buttons}>
           <Link href=""> CanSat</Link>
@@ -57,7 +57,7 @@ function NavBarNew() {
           <i className="fa-solid fa-xmark"></i>
         </div>
         {user && <Link href="/admin"><a className="nav-ele admin">Admin</a></Link>}
-        <a className="nav-ele" href="/about/">Who are we</a>
+        <a className="nav-ele" href="/about/">Who We Are</a>
         <Link href="/teams/"><a className="nav-ele">Team</a></Link>
         {/* <h2>Projects</h2> */}
         <a className="nav-ele mobile-projects" href="#!" onClick={() => toggleClass("mobile-dropdown", "active")}>Projects</a>
@@ -69,7 +69,7 @@ function NavBarNew() {
           <a className="nav-project" href="../archangel/">R&D</a>
         </div>
         <Link href="/posts/"><a className="nav-ele">Blog</a></Link>
-        <a className="nav-ele" href="/about/">Sponsors</a>
+        <a className="nav-ele" href="/sponsors/">Sponsors</a>
         <a className="nav-ele" href="../contact/">Contact</a>
         {user && <SignOutButton />}
       </div>

@@ -69,7 +69,7 @@ function Teams() {
     hrefF: "hub.com"
   }]
 
-  const [year, setyear] = useState('2021-2022');
+  const [year, setyear] = useState('2022-2023');
   const [drop, setDrop] = useState(false);
 
   return (
@@ -85,7 +85,7 @@ function Teams() {
                 setNumber(0);
               }}
             >
-              2021-2022
+              2022-2023
             </div>
           </div>
           <div className={styles.time}>
@@ -96,7 +96,7 @@ function Teams() {
                 setNumber(1);
               }}
             >
-              2020-2021
+              2021-2022
             </div>
           </div>
           <div className={styles.time}>
@@ -107,7 +107,7 @@ function Teams() {
                 setNumber(2);
               }}
             >
-              2019-2020
+              2020-2021
             </div>
           </div>
         </div>
