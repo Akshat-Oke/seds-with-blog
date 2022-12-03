@@ -14,7 +14,9 @@ function Cards({ datas }) {
                 <Image src={`/assets/images/Profile_pics/${data.img}`} height={233} width={299} />
               </div>
             </div>
-            <div className={styles.name}>{data.name}</div>
+            <a href={data.url ?? "#!"} target="_blank" rel="noreferrer">
+              <div className={styles.name}>{data.name}</div>
+            </a>
             <div className={styles.por}>{data.por}</div>
             {/* <div className={styles.links}>
               <div className={styles.link}>
