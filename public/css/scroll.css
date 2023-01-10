@@ -30,6 +30,14 @@
 .up .mouse::before {
   animation: arrScroll 2s ease-out infinite reverse;
 }
+.up .mouse::after {
+  content: "Scroll up";
+  top: -30px;
+  position: absolute;
+  left: 0px;
+  width: max-content;
+  transform: translateX(-50%);
+}
 @keyframes arrScroll {
   0% {
     height: 0;

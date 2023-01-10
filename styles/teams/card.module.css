@@ -2,6 +2,7 @@
 .container {
   height: 50vh;
   width: 40vh;
+  max-width: 290px;
   margin: 5vh;
   display: flex;
   flex-direction: column;
