@@ -1,0 +1,11 @@
+https://seds-bphc.vercel.app/home
+https://seds-bphc.vercel.app/about
+https://seds-bphc.vercel.app/team
+https://seds-bphc.vercel.app/sacup/index.html
+https://seds-bphc.vercel.app/cansat/index.html
+https://seds-bphc.vercel.app/cubesat/index.html
+https://seds-bphc.vercel.app/archangel/index.html
+https://seds-bphc.vercel.app/sponsors
+https://seds-bphc.vercel.app/posts
+https://seds-bphc.vercel.app/contact
+
