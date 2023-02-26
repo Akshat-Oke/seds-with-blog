@@ -35,6 +35,7 @@
         justify-content: start;
         flex-direction: column;
         position: relative;
+        z-index: 1000;
       }
       @media screen and (max-width: 730px) {
         .container-hero {
@@ -87,6 +88,10 @@
         canvas {
           transform: translateX(-35%);
         }
+      }
+      /* id starting with label */
+      [id^="label"] {
+        user-select: none;
       }
     </style>
   </head>
@@ -151,7 +156,12 @@
         <div class="h1" id="sacup">
           <h1>
             Team
-            <a class="blue-link" href="/posts/spaceport-america-cup">Artemis</a>
+            <a
+              style="z-index: 9999"
+              class="blue-link"
+              href="/posts/spaceport-america-cup"
+              >Artemis</a
+            >
           </h1>
         </div>
       </div>

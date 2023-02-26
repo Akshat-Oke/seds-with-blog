@@ -1,10 +1,11 @@
 .label {
-  z-index: 100;
+  z-index: 10;
   position: fixed;
   left: 30%;
   top: 30%;
   color: white;
   opacity: 0;
+  user-select: none;
 }
 .label > div,
 .label h3 {
